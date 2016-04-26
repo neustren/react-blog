@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="164" height="111" viewBox="0 0 164 111">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        font-size: 35.122px;
+      }
+
+      .cls-2 {
+        fill: #3364aa;
+        text-anchor: middle;
+        font-family: "Gotham Ultra";
+      }
+    </style>
+  </defs>
+  <text transform="translate(83 98) scale(3.65)" class="cls-1"><tspan x="0" class="cls-2">$</tspan></text>
+  <text transform="translate(146 91) scale(1.52)" class="cls-1"><tspan x="0" class="cls-2">$</tspan></text>
+  <text transform="translate(18 91) scale(1.52)" class="cls-1"><tspan x="0" class="cls-2">$</tspan></text>
+</svg>

@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'olivier';
+  src: url('olivier.eot'); /* IE9 Compat Modes */
+  src: url('olivier.eot?#iefix') format('embedded-opentype'),
+       url('olivier.woff') format('woff'),
+       url('olivier.ttf')  format('truetype'),
+       url('olivier.svg#d3ca5dde60f88db606021eeba2499c02') format('svg'); /* Legacy iOS */
+
+  font-style:   normal;
+  font-weight:  400;
+}
