@@ -1,5 +1,5 @@
-import App from './main';
-import Inicial from './inicial';
+import App from './containers/main';
+import Inicial from './containers/inicial';
 import Cadastro from './cadastro';
 import Pergunta from './pergunta';
 import Resultado from './resultado';
