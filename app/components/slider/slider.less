@@ -133,11 +133,16 @@ margin-right: 1em;
   & > div {
     height: 30px;
     display: flex;
-      flex-flow: column wrap;
-      justify-content: center;
+        align-items: flex-end;
   }
 }
+.bolinhasSlider {
+      flex: 2;
+}
 .bolinhasSlider > img {
+  margin-right: 0.5em;
+}
+.setinhasSlider2 > img {
   margin-right: 0.5em;
 }
 .setinhasSlider > img {
@@ -145,6 +150,10 @@ margin-right: 1em;
 }
 
 .setinhasSlider {
+  align-self: flex-end;
+}
+
+.setinhasSlider2 {
   align-self: flex-end;
 }
 
@@ -164,5 +173,17 @@ only screen and (max-width: 767px) {
     }
   .informacoesBanner {
     width: 90%;
+  }
+
+  .bolinhasSlider {
+      order:2;
+      text-align: center;
+  }
+  .setinhasSlider {
+    order:1
+  }
+
+  .setinhasSlider2 {
+    order:3
   }
 }

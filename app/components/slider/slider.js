@@ -1,16 +1,14 @@
 import React, {Component} from 'react';
 import styles from './slider.less';
-
+import Assinatura from '../../components/assinatura/assinatura';
 const banner = require('../../img/banner.png');
-const leituraIcone = require('../../img/leituraIcone.png');
+
 const bolinhaAmarela = require('../../img/sliderBolinhaAmarela.png');
 const bolinhaCinza = require('../../img/sliderBolinhaCinza.png');
 const sliderSetaEsquerdaBranca = require('../../img/sliderSetaEsquerdaBranca.png');
 const sliderSetaEsquerdaCinza = require('../../img/sliderSetaEsquerdaCinza.png');
 const sliderSetaDireitaBranca = require('../../img/sliderSetaDireitaBranca.png');
 const sliderSetaDireitaCinza = require('../../img/sliderSetaDireitaCinza.png');
-
-const dataIcone = require('../../img/dataIcone.png');
 
 
 var placeholder=[{banner: banner, categoria: "Finanças", titulo: "Inadimplência: perspectivas continuam negativas para 2016", subTitulo: "Desemprego e a falta de educação são os dois maiores motivos, segundo pesquisa.", autor: "Isabella Abreu", data: "22/02/2015", tempo: "5 min"}, {banner: "http://cdn-w.pornstarblognetwork.com/clubfayereagan.com/public_html/wp-content/uploads/2010/08/0738.jpg", categoria: "Finanças", titulo: "Inadimplência: perspectivas continuam negativas para 2016", subTitulo: "Desemprego e a falta de educação são os dois maiores motivos, segundo pesquisa.", autor: "Isabella Abreu", data: "22/02/2015", tempo: "5 min"}];
@@ -25,7 +23,7 @@ export default class Slider extends Component {
   }
 
   componentDidMount() {
-    this.refs.slider.addEventListener("mousemove",(e) => { console.log('oi'+ (e.pageX-this.dragging)); } )
+    this.refs.slider.addEventListener("mousemove",(e) => { } )
   }
 
   render() {
@@ -52,6 +50,8 @@ export default class Slider extends Component {
         </div>
         <div className={styles.setinhasSlider}>
            {(this.state.selected===0)&&(<img src={sliderSetaEsquerdaCinza}></img>)||(<img src={sliderSetaEsquerdaBranca}></img>)}
+        </div>
+          <div className={styles.setinhasSlider2}>
             {(this.state.selected===(placeholder.length-1))&&(<img src={sliderSetaDireitaCinza}></img>)||(<img src={sliderSetaDireitaBranca}></img>)}
         </div>
       </div>
@@ -72,16 +72,7 @@ function Slide(props) {
           <div className={styles.corCategoria}>{props.categoria}</div>
           <div className={styles.tituloBanner}>{props.titulo}</div>
           <div className={styles.subTituloBanner}>{props.subTitulo}</div>
-          <div className={styles.descricaoBanner}>
-            <div className={styles.preNomeAutorBanner}>por</div>
-            <div className={styles.nomeAutorBanner}>{props.autor}</div>
-            <div className={styles.mobileBlock}>
-              <img className={styles.iconeDescricaoBanner} src={dataIcone}></img>
-              <div className={styles.dataBanner}>{props.data}</div>
-              <img className={styles.iconeDescricaoBanner} src={leituraIcone}></img>
-              <div className={styles.leituraBanner}>{props.tempo} pra ler</div>
-            </div>
-          </div>
+        <Assinatura cor="white" autor={props.autor} data={props.data} tempo={props.tempo}></Assinatura>
         </div>
 
       </div>
