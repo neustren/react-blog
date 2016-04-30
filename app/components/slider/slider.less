@@ -1,0 +1,168 @@
+.headerFull {
+  background-color: #005aa1;
+  border-bottom: 4px solid #ffef00;
+}
+
+.sliderWrapper {
+  height: 330px;
+  max-height: 330px;
+  position: relative;
+  -webkit-transform: translateZ(0);
+}
+
+.Slider {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  display: flex;
+  flex-flow: column wrap;
+  width: 100vw;
+  overflow-x: hidden;
+  height: 330px;
+  max-height: 330px;
+  &::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+  }
+
+}
+
+.headerIn {
+  color: white;
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+  display: flex;
+justify-content: space-between;
+}
+.LogoNome {
+  color: white;
+      display: inline-block;
+}
+.NomeBlog {
+  display: inline-block;
+  margin-left: 0.5em;
+  font-size: 1.3em;
+  font-weight: bold;
+  vertical-align: middle;
+}
+.IconesHeader {
+  margin-left: auto;
+      display: inline-block;
+}
+.iconeIndividual {
+  margin-left: 1em;
+}
+.imagemBanner {
+  height:330px;
+  width: 100%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: flex;
+align-items: flex-end;
+}
+.corCategoria {
+  color: black;
+  background-color: #ffef00;
+  padding:0.4em 0.7em;
+  display: inline-block;
+}
+.tituloBanner {
+  font-size: 2em;
+  font-weight:bold;
+  color:white;
+  line-height: normal;
+  margin-top: 0.4em;
+}
+.subTituloBanner {
+  color: white;
+  font-size:0.9em;
+  font-weight: lighter;
+      margin-top: 0.4em;
+}
+.descricaoBanner {
+  margin-top: 0.4em;
+}
+.nomeAutorBanner {
+  color: #ffcc00;
+  font-weight: bold;
+display: inline-block;
+margin-right: 1em;
+}
+.preNomeAutorBanner {
+  display: inline-block;
+  margin-right: 0.3em;
+  color: white;
+}
+.dataBanner {
+    display: inline-block;
+    color:white;
+    margin-right: 1em;
+}
+.iconeDescricaoBanner {
+  margin-right: 0.3em;
+}
+.leituraBanner {
+    display: inline-block;
+    color:white;
+}
+.mobileBlock {
+  display: inline-block;
+}
+.informacoesBanner {
+  width: 60%;
+  margin-bottom: 64px;
+}
+.backgroundBanner {
+      background: -webkit-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.9));
+      width: 100%;
+}
+.controleSlider {
+
+//  justify-content: space-between;
+  margin-bottom: 2em;
+  margin-top: -50px;
+  width: 100vw;
+  height: 30px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  & > div {
+    height: 30px;
+    display: flex;
+      flex-flow: column wrap;
+      justify-content: center;
+  }
+}
+.bolinhasSlider > img {
+  margin-right: 0.5em;
+}
+.setinhasSlider > img {
+  margin-right: 0.5em;
+}
+
+.setinhasSlider {
+  align-self: flex-end;
+}
+
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 767px),
+only screen and ( min--moz-device-pixel-ratio: 2) and (max-width: 767px),
+only screen and ( -o-min-device-pixel-ratio: 2/1) and (max-width: 767px),
+only screen and ( min-device-pixel-ratio: 2) and (max-width: 767px),
+only screen and ( min-resolution: 192dpi) and (max-width: 767px),
+only screen and ( min-resolution: 2dppx) and (max-width: 767px),
+only screen and (max-width: 767px) {
+  .mobileBlock {
+    display: block;
+  }
+  .imagemBanner {
+  height: 500px;
+    }
+  .informacoesBanner {
+    width: 90%;
+  }
+}
