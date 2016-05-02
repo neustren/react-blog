@@ -3,7 +3,7 @@ import Inicial from './containers/inicial';
 import Cadastro from './cadastro';
 import Pergunta from './pergunta';
 import Resultado from './resultado';
-
+import Interna from './containers/interna/interna';
 import React from 'react';
 
 import { Router, Route, IndexRoute } from 'react-router'
@@ -12,6 +12,7 @@ export default function() {
 return (<Route path="/" component={App}>
   <IndexRoute component={Inicial}/>
   <Route path="cadastro" component={Cadastro}/>
+  <Route path="postagem" component={Interna}/>
   <Route path="pergunta/:num" component={Pergunta}/>
   <Route path="resultado/:num" component={Resultado}/>
   {/*<Route path="foo" component={Foo}/>*/}
