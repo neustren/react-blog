@@ -11,6 +11,11 @@ export default class Historias extends Component {
     const acaoSetaEsquerda = require('../../img/acaoSetaEsquerda.png');
     const Foto = require('../../img/Foto.png');
     const leao = require('../../img/leao.png');
+    const Centro = require('../../img/centro.png');
+        // const Mundo = require('../../img/mundo.png');
+        const dataIcone = require('../../img/dataIcone.png');
+        const Esquerda = require('../../img/Esquerda.png');
+        const Direita = require('../../img/Direita.png');
 
 return (
 
@@ -20,7 +25,7 @@ return (
   <div className={styles.caixaImagem}>
     <img src={Centro} className={styles.imagemDestaque}></img>
     <div className={styles.tagFlutuante}>
-      <img src={Mundo} className={styles.imagemFlutuante}></img>
+      {/*<img src={Mundo} className={styles.imagemFlutuante}></img>*/}
     </div>
   </div>
   <div className={styles.descricaoDestaque}>

@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700,900);
+
 .base {
   margin-top: 3em;
   margin-left:2em;
@@ -6,23 +8,27 @@
   padding-bottom:2em;
 }
 .titulo {
+  font-family: 'Roboto', sans-serif;
   color: black;
-  font-size: 2em;
+  font-size: 35px;
   line-height: 1em;
-
-  font-weight: bold;
+cursor: pointer;
+  font-weight: 900;
   margin-bottom: 0.3em;
 }
 .subtitulo {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 color:#cccccc;
-font-size: 1.2em;
+font-size: 20px;
 
 }
 
 .imagemBlog {
 width: 50%;
 height: 50%;
-margin-right: 1em
+margin-right: 1em;
+cursor: pointer;
 }
 
 .imagemDisplay {

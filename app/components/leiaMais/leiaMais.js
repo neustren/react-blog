@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 
 import styles from './leiaMais.less';
 import {Link} from 'react-router';
-
+import Post from '../post/post';
 
 export default class LeiaMais extends Component {
   render() {

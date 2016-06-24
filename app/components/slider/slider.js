@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import styles from './slider.less';
+import styles from './slider.css';
 import Assinatura from '../../components/assinatura/assinatura';
 const banner = require('../../img/banner.png');
 

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import styles from './assinatura.less';
+import styles from './assinatura.css';
 import {Link} from 'react-router';
 const leituraIcone = require('../../img/leituraIcone.png');
 const leituraIconeCinza = require('../../img/leituraIconeCinza.png');
@@ -26,7 +26,7 @@ return (
     <img className={styles.iconeDescricaoBanner} src={data}></img>
     <div className={styles.dataBanner}>{props.data}</div>
     <img className={styles.iconeDescricaoBanner} src={leitura}></img>
-    <div className={styles.leituraBanner}>{props.tempo} pra ler</div>
+    <div className={styles.leituraBanner}>{props.tempo} mins pra ler</div>
   </div>
 </div>
 )

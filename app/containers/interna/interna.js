@@ -8,7 +8,7 @@ import {Link} from 'react-router';
 import Post from '../../components/post/post';
 import Destaque from '../../components/destaque/destaque';
 import Historias from '../../components/historias/historias';
-
+import LeiaMais from '../../components/leiamais/leiamais';
 export default class Interna extends Component {
   render() {
 

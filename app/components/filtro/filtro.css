@@ -1,0 +1,128 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+.linhaFlex {
+  display: flex;
+  justify-content: center;
+}
+.boxTags {
+  flex:1;
+  padding: 1em;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  padding-bottom: 1.2em;
+
+}
+.recente {
+  color:#fff;
+  background-color: #67b35a;
+  border-top: 0.5em solid #67b35a;
+    transition: 0.5s;
+}
+.recente:hover {
+  color:#67b35a;
+  transition: 0.5s;
+  background-color: #fff;
+  border-top: 0.5em solid #67b35a;
+}
+.recenteSelected {
+  color:#67b35a;
+  background-color: #fff;
+      transition: 0.5s;
+  border-top: 0.5em solid #67b35a;
+}
+
+.financas {
+  color:#ff9b00;
+  background-color: #ffef00;
+      transition: 0.5s;
+  border-top: 0.5em solid #ffef00;
+}
+.financasSelected {
+  color:#ff9b00;
+      transition: 0.5s;
+  background-color: #fff;
+  border-top: 0.5em solid #ff9b00;
+}
+.financas:hover {
+  color:#ff9b00;
+      transition: 0.5s;
+  background-color: #fff;
+  border-top: 0.5em solid #ff9b00;
+}
+.mundo {
+  color:#001d58;
+  background-color: #005aa1;
+      transition: 0.5s;
+  border-top: 0.5em solid #005aa1;
+}
+.mundoSelected {
+  color:#005aa1;
+  background-color: #fff;
+      transition: 0.5s;
+  border-top: 0.5em solid #005aa1;
+}
+.mundo:hover {
+  color:#005aa1;
+  background-color: #fff;
+      transition: 0.5s;
+  border-top: 0.5em solid #005aa1;
+}
+.imoveis {
+  color:#4c7e98;
+  background-color: #a8daf4;
+      transition: 0.5s;
+  border-top: 0.5em solid #a8daf4;
+}
+.imoveisSelected {
+  color:#40baff;
+  background-color: #fff;
+      transition: 0.5s;
+  border-top: 0.5em solid #40baff;
+}
+.imoveis:hover {
+  color:#40baff;
+  background-color: #fff;
+      transition: 0.5s;
+  border-top: 0.5em solid #40baff;
+}
+.estilos {
+  color:#7d7d7d;
+  background-color: #333333;
+      transition: 0.5s;
+  border-top: 0.5em solid #333333;
+}
+.estilosSelected {
+  color:#333333;
+  background-color: #fff;
+      transition: 0.5s;
+  border-top: 0.5em solid #333333;
+}
+.estilos:hover {
+  color:#333333;
+  background-color: #fff;
+      transition: 0.5s;
+  border-top: 0.5em solid #333333;
+}
+.nomeFiltro {
+  display: inline-block;
+  font-size:0.8em;
+  font-weight: bold;
+}
+.iconeFiltro {
+  margin-right: 0.5em;
+}
+.boxTags:hover {
+  cursor: pointer;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 767px),
+only screen and ( min--moz-device-pixel-ratio: 2) and (max-width: 767px),
+only screen and ( -o-min-device-pixel-ratio: 2/1) and (max-width: 767px),
+only screen and ( min-device-pixel-ratio: 2) and (max-width: 767px),
+only screen and ( min-resolution: 192dpi) and (max-width: 767px),
+only screen and ( min-resolution: 2dppx) and (max-width: 767px),
+only screen and (max-width: 767px) {
+  .nomeFiltro {
+    display: none;
+  }
+}
