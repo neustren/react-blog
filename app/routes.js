@@ -10,7 +10,7 @@ export default function() {
 return (<Route path="/" component={App}>
   <IndexRoute component={Inicial}/>
 
-  <Route path="post/:id/:slug" component={Interna}/>
+  <Route path="post/:id" component={Interna}/>
 
   {/*<Route path="foo" component={Foo}/>*/}
   {/*<Route path="bar" component={Bar}/>*/}
