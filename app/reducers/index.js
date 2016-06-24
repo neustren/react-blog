@@ -10,5 +10,6 @@ var reducers =  {
     postsByCategory: postsByCategory,
     postOpened: postOpened
 };
+
 export default reducers;
 module.exports=reducers;

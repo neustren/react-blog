@@ -2,11 +2,17 @@ import React, {Component} from 'react';
 import client from 'superagent';
 import styles from './post.css';
 import {Link} from 'react-router';
+import {connect} from 'react-redux';
+import { bindActionCreators } from 'redux';
 import Assinatura from '../assinatura/assinatura';
 import { ROOT_URL }  from '../../actions/index';
 import { postOpened } from '../../actions/postOpened';
 
-export default class Post extends Component {
+class Post extends Component {
+  static contextTypes = {
+  router: React.PropTypes.object.isRequired
+};
+
   constructor(props) {
     super(props);
     this.state = {
@@ -28,9 +34,12 @@ export default class Post extends Component {
     });
   }
 }
+
 joinPost() {
   console.log(this);
-  this.props.postOpened(data, this.state.imagem);
+  this.props.postOpened(this.props.data, this.state.imagem);
+      this.context.router.push('/post/'+this.props.data.id);
+
 }
   render() {
 
@@ -62,3 +71,15 @@ return (
 )
 }
 }
+
+
+function mapStateToProps(state) {
+  return {
+    state
+  };
+}
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ postOpened }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Post);

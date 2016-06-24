@@ -1,6 +1,6 @@
 {
   "javascript": {
-    "main": "http://25.100.19.130:3101/dist/main-57c2bc8c91cf06bda4fd.js"
+    "main": "http://25.100.19.130:3101/dist/main-a90018151f737cc533fc.js"
   },
   "styles": {},
   "assets": {
@@ -245,6 +245,35 @@
     "./app/components/leiamais/leiaMais.less": {
       "tituloLeiaMais": "tituloLeiaMais___XlwnU",
       "_style": ".tituloLeiaMais___XlwnU {\n  margin-left: 2em;\n  color: #444444;\n  font-weight: bold;\n  font-size: 1.2em;\n  margin-bottom: 1em;\n  border-bottom: 1px solid black;\n  padding-bottom: 1em;\n}\n"
+    },
+    "./app/components/postagemCompleta/postagemCOmpleta.css": {
+      "imagemBanner": "imagemBanner___2vEgy",
+      "shareCollumn": "shareCollumn___3hthC",
+      "iconeDestaque": "iconeDestaque___31lX6",
+      "textoPostagem": "textoPostagem___1yqPe",
+      "corCategoria": "corCategoria___1-32p",
+      "tituloBanner": "tituloBanner___2D4aT",
+      "subTituloBanner": "subTituloBanner___2RhL_",
+      "informacoesBanner": "informacoesBanner___2JNjJ",
+      "backgroundBanner": "backgroundBanner___3XId6",
+      "shareRow": "shareRow___7bOgZ",
+      "caixaAzul": "caixaAzul___1vif2",
+      "linhaCompartilhar": "linhaCompartilhar___3-2cS",
+      "tagsTitulo": "tagsTitulo___3XEG1",
+      "boxTags": "boxTags___2ZLBi",
+      "entrenaconversadesktop": "entrenaconversadesktop___1_Ra_",
+      "entrenaconversamobile": "entrenaconversamobile___112np",
+      "historiasBox": "historiasBox___2WA1b",
+      "acaoAnterior": "acaoAnterior___3gUpV",
+      "setinhaAcao": "setinhaAcao___2CvFK",
+      "anteriorHisto": "anteriorHisto___2JzhQ",
+      "proximaHist": "proximaHist___3-PV1",
+      "boxProximo": "boxProximo___30l2A",
+      "tituloNoticiaAcao": "tituloNoticiaAcao___1l3Nx",
+      "FotoAcaoNoticias": "FotoAcaoNoticias___2ZWkn",
+      "tituloLeiaMais": "tituloLeiaMais___1MGSN",
+      "boxAnterior": "boxAnterior___2I2HO",
+      "_style": ".imagemBanner___2vEgy {\r\n  height:330px;\r\n  width: 100%;\r\n  background-size: 100% 100%;\r\n  background-repeat: no-repeat;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n-ms-flex-align: end;\r\n    align-items: flex-end;\r\n}\r\n.shareCollumn___3hthC {\r\n  display: block;\r\nmargin-left: auto;\r\nmargin-right: auto;\r\nmargin-top: 2em;\r\n    border: 5px solid #ffffff;\r\n}\r\n.shareCollumn___3hthC:hover {\r\nbackground-color: #d6d6d6;\r\n    border: 5px solid #d6d6d6;\r\n    border-radius: 3px;\r\n    cursor: pointer;\r\n}\r\n.iconeDestaque___31lX6 {\r\n      transform: scale(0.8);\r\n      margin-right:0.5em;\r\n      margin-top: 1em;\r\n}\r\n.textoPostagem___1yqPe {\r\n  margin-top: 2em;\r\n  margin-bottom: 2em;\r\n}\r\n.corCategoria___1-32p {\r\n  color: black;\r\n  background-color: #ffef00;\r\n  padding:0.4em 0.7em;\r\n  display: inline-block;\r\n}\r\n.tituloBanner___2D4aT {\r\n  font-size: 2em;\r\n  font-weight:bold;\r\n  color:white;\r\n  line-height: normal;\r\n  margin-top: 0.4em;\r\n}\r\n.subTituloBanner___2RhL_ {\r\n  color: white;\r\n  font-size:0.9em;\r\n  font-weight: lighter;\r\n      margin-top: 0.4em;\r\n}\r\n.informacoesBanner___2JNjJ {\r\n  width: 70%;\r\n  margin-bottom: 2em;\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n}\r\n.backgroundBanner___3XId6 {\r\n      background: -webkit-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.9));\r\n      width: 100%;\r\n}\r\n.shareRow___7bOgZ {\r\n  padding:0.5em;\r\n\r\n}\r\n.caixaAzul___1vif2 {\r\n  background-color: #005aa1;\r\n  -ms-flex: 1;\r\n      flex: 1;\r\n  text-align: center;\r\n  padding: 0.2em;\r\n  margin: 0.5em;\r\n}\r\n.caixaAzul___1vif2:hover {\r\n  cursor: pointer;\r\n}\r\n.linhaCompartilhar___3-2cS {\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  margin-bottom:1.8em;\r\n}\r\n.tagsTitulo___3XEG1 {\r\n  color: #444444;\r\n  font-weight: bold;\r\n  font-size:1.3em;\r\n  margin-bottom:0.3em;\r\n}\r\n.boxTags___2ZLBi {\r\n  background-color: #f5f5f5;\r\n  padding:0.7em;\r\n  color:#444444;\r\n  font-size:0.9em;\r\n  display: inline-block;\r\n  margin-right:0.7em;\r\n\r\n}\r\n.entrenaconversadesktop___1_Ra_ {\r\n\r\ndisplay: block;\r\nmargin-left: auto;\r\nmargin-right: auto;\r\nmargin-top: 3em;\r\n}\r\n.entrenaconversamobile___112np {\r\n  width: 100%;\r\ndisplay: block;\r\nmargin-left: auto;\r\nmargin-right: auto;\r\nmargin-top: 3em;\r\n}\r\n\r\n.historiasBox___2WA1b {\r\n  background-color: #f5f5f5;\r\n  margin-top: 3em;\r\n  margin-bottom: 3em;\r\n  padding-top: 2.5em;\r\n  padding-bottom: 2.5em;\r\n}\r\n\r\n.acaoAnterior___3gUpV {\r\n  display:inline-block;\r\n}\r\n.setinhaAcao___2CvFK {\r\n  display:inline-block;\r\n}\r\n.anteriorHisto___2JzhQ {\r\ndisplay:inline-block;\r\nmargin-left: 1em;\r\ncolor:#333333;\r\nfont-weight: bold;\r\nfont-size:0.8em;\r\nletter-spacing: 1px;\r\ncursor: pointer;\r\nmargin-bottom: 1em;\r\n}\r\n.proximaHist___3-PV1 {\r\ndisplay:inline-block;\r\nmargin-right : 1em;\r\ncolor:#333333;\r\nfont-weight: bold;\r\nfont-size:0.8em;\r\nletter-spacing: 1px;\r\ncursor: pointer;\r\nmargin-bottom: 1em;\r\n}\r\n.boxProximo___30l2A {\r\n  text-align: right;\r\n}\r\n.tituloNoticiaAcao___1l3Nx {\r\n  font-weight: bold;\r\nfont-size: 1.1em;\r\nmargin-top: 0.5em;\r\n\r\n}\r\n.FotoAcaoNoticias___2ZWkn {\r\n  width: 100%;\r\n}\r\n\r\n.tituloLeiaMais___1MGSN {\r\n  margin-left: 2em;\r\n  color: #444444;\r\n  font-weight: bold;\r\n  font-size:1.2em;\r\n  margin-bottom:1em;\r\n  border-bottom: 1px solid black;\r\n  padding-bottom:1em;\r\n}\r\n\r\n\r\n@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 767px),\r\nonly screen and ( min--moz-device-pixel-ratio: 2) and (max-width: 767px),\r\nonly screen and ( min-device-pixel-ratio: 2) and (max-width: 767px),\r\nonly screen and ( -webkit-min-device-pixel-ratio: 2) and (max-width: 767px),\r\nonly screen and ( min-resolution: 192dpi) and (max-width: 767px),\r\nonly screen and ( min-resolution: 2dppx) and (max-width: 767px),\r\nonly screen and (max-width: 767px) {\r\n  .imagemBanner___2vEgy {\r\n  height: 500px;\r\n    }\r\n    .entrenaconversamobile___112np {\r\n      width: 50%;\r\n    }\r\n    .informacoesBanner___2JNjJ {\r\n      width: 90%;\r\n    }\r\n    .acaoAnterior___3gUpV {\r\n      display:block;\r\n    }\r\n\r\n    .tituloNoticiaAcao___1l3Nx {\r\n      font-size:1.3em;\r\n      text-align: left;\r\n    }\r\n    .boxAnterior___2I2HO {\r\n      border-bottom: 1px solid #000000;\r\n      padding-bottom: 2em;\r\n      margin-bottom: 2em;\r\n    }\r\n    .anteriorHisto___2JzhQ {\r\n    font-size:1em;\r\n    }\r\n    .proximaHist___3-PV1 {\r\n    font-size:1em;\r\n    }\r\n          margin-bottom: 2em;\r\n\r\n}\r\n@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 600px),\r\nonly screen and ( min--moz-device-pixel-ratio: 2) and (max-width: 600px),\r\nonly screen and ( min-device-pixel-ratio: 2) and (max-width: 600px),\r\nonly screen and ( -webkit-min-device-pixel-ratio: 2) and (max-width: 600px),\r\nonly screen and ( min-resolution: 192dpi) and (max-width: 600px),\r\nonly screen and ( min-resolution: 2dppx) and (max-width: 600px),\r\nonly screen and (max-width: 600px) {\r\n  .entrenaconversamobile___112np {\r\n    width: 80%;\r\n  }\r\n}\r\n@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 500px),\r\nonly screen and ( min--moz-device-pixel-ratio: 2) and (max-width: 500px),\r\nonly screen and ( min-device-pixel-ratio: 2) and (max-width: 500px),\r\nonly screen and ( -webkit-min-device-pixel-ratio: 2) and (max-width: 500px),\r\nonly screen and ( min-resolution: 192dpi) and (max-width: 500px),\r\nonly screen and ( min-resolution: 2dppx) and (max-width: 500px),\r\nonly screen and (max-width: 500px) {\r\n  .entrenaconversamobile___112np {\r\n    width: 90%;\r\n  }\r\n}\r\n@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 400px),\r\nonly screen and ( min--moz-device-pixel-ratio: 2) and (max-width: 400px),\r\nonly screen and ( min-device-pixel-ratio: 2) and (max-width: 400px),\r\nonly screen and ( -webkit-min-device-pixel-ratio: 2) and (max-width: 400px),\r\nonly screen and ( min-resolution: 192dpi) and (max-width: 400px),\r\nonly screen and ( min-resolution: 2dppx) and (max-width: 400px),\r\nonly screen and (max-width: 400px) {\r\n  .entrenaconversamobile___112np {\r\n    width: 100%;\r\n  }\r\n}\r\n"
     }
   }
 }

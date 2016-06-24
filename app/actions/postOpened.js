@@ -18,12 +18,22 @@ export function postOpened(data,imagem) {
 export function getPostOpened(CATEGORY) {
   return function(dispatch) {
 
-    return client.get(`${ROOT_URL}/wp-json/wp/v2/posts?categories=${CATEGORY}`)
-    .end(function(err,data) {
+    return new Promise(function(resolve, reject) {
+      client.get(`${ROOT_URL}/wp-json/wp/v2/posts?categories=${CATEGORY}`)
+        .end(function(err,data) {
 
-      let enderecos = JSON.parse(data.text);
+      let dataF = JSON.parse(data.text);
+      let imagem = dataF.featured_media;
+      var res;
+      if(imagem) {
+              client.get(`${ROOT_URL}/wp-json/wp/v2/media/${imagem}`)
+                .end(function(err,data) {
+                res = JSON.parse(data.text);
+            });
+      }
 
-    dispatch(postOpened(enderecos))
-    })
+    dispatch(postOpened(dataF, res));
+  });
+});
   }
 }

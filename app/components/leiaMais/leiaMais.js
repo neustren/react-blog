@@ -17,10 +17,10 @@ return (
           <div className="col-md-offset-2 col-lg-offset-2 col-xl-offset-2 col-sm-offset-2 col-md-8 col-lg-8 col-xl-8 col-sm-8 col-xs-12">
     <div className={styles.tituloLeiaMais}>LEIA TAMBÉM:</div>
 
-    <Post></Post>
+    {/*<Post></Post>
     <Post imagem={leao} ></Post>
       <Post></Post>
-      <Post imagem={leao} ></Post>
+      <Post imagem={leao} ></Post>*/}
       </div>
     </div>
 )
