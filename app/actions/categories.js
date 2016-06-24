@@ -1,23 +1,29 @@
-import axios from 'axios';
+import client from 'superagent';
+export const CATEGORIES = 'CATEGORIES';
 
-export const SELECTED_CATEGORY = 'SELECTED_CATEGORY';
+import { ROOT_URL } from './index';
+//todas
 
-export function selectCategory(data) {
+export function categories(data) {
+  // const request = client.get(`${ROOT_URL}/wp-json/wp/v2/posts?categories=${CATEGORY}`);
 
-  var object = {
-    selected: data
-  };
-  return {
-    type: SELECTED_CATEGORY,
-    data: object
-  };
+    return {
+      type: CATEGORIES,
+      data
+    };
 }
 
-/*
-5 = ESTILO
-2 = financas
-4 = imoveis
-3 = MUNDO
-1 = semcategoria
+export function getCategories() {
+  return function(dispatch) {
 
-*/
+    return client.get(`${ROOT_URL}/wp-json/wp/v2/categories`)
+    .end(function(err,data) {
+
+      let resCategories = JSON.parse(data.text);
+
+    dispatch(categories(resCategories))
+    })
+  }
+}
+
+/// selecionar

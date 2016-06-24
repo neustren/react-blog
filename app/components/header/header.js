@@ -4,8 +4,21 @@ import Slider from '../../components/slider/slider';
 
 import styles from './header.css';
 import {Link} from 'react-router';
+import {connect} from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { getTags } from '../../actions/tags';
+import { getCategories } from '../../actions/categories';
 
-export default class Header extends Component {
+class Header extends Component {
+
+  componentDidMount() {
+     this.props.getTags();
+     this.props.getCategories();
+    // this.setState({ servicos: this.props.lavanderia.Services});
+  }
+
+
+
   render() {
     const logo = require('../../img/Logo.png');
     const mail = require('../../img/Mail.png');
@@ -31,3 +44,14 @@ return (
 )
 }
 }
+function mapStateToProps(state) {
+  return {
+    state
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ getTags, getCategories }, dispatch);
+}
+
+export default connect( mapStateToProps, mapDispatchToProps)(Header);

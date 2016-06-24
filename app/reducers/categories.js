@@ -1,16 +1,15 @@
 import {
-  SELECTED_CATEGORY
+  CATEGORIES
 } from '../actions/categories';
 
 var initialState = {
-  selected:''
-};
-
-export default function category (state = initialState, action) {
+  categories: []
+  };
+export default function categories (state = initialState, action) {
   switch (action.type) {
-    case SELECTED_CATEGORY:
+    case CATEGORIES:
 
-      return { ...state,...action.data };
+      return { ...state, categories: action.data };
       default:
         return state;
       }

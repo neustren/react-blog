@@ -1,14 +1,17 @@
 import { combineReducers } from 'redux';
-import category from './categories';
+import selectedCategory from './selectedCategory';
 import postsByCategory from './postsByCategory';
 import postOpened from './postOpened';
 import { routeReducer } from 'react-router-redux';
-
+import tags from './tags';
+import categories from './categories';
 
 var reducers =  {
-    category:category,
+    selectedCategory:selectedCategory,
     postsByCategory: postsByCategory,
-    postOpened: postOpened
+    postOpened: postOpened,
+    tags: tags,
+    categories: categories
 };
 
 export default reducers;

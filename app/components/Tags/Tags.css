@@ -1,0 +1,15 @@
+.tagsTitulo {
+  color: #444444;
+  font-weight: bold;
+  font-size:1.3em;
+  margin-bottom:0.3em;
+}
+.boxTags {
+  background-color: #f5f5f5;
+  padding:0.7em;
+  color:#444444;
+  font-size:0.9em;
+  display: inline-block;
+  margin-right:0.7em;
+
+}

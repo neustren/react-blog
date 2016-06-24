@@ -1,0 +1,45 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+.slug {
+  background-color: red;
+}
+
+.mundo {
+  background-color: #005aa1;
+  color: #fff;
+  font-family: 'Montserrat';
+  font-weight: 400;
+  display:inline-block;
+  padding:0.5em 1em;
+  font-size:15px;
+}
+
+.financas {
+  background-color: #ffef00;
+  color: #333;
+  font-family: 'Montserrat';
+  font-weight: 400;
+  display:inline-block;
+  padding:0.5em 1em;
+  font-size:15px;
+}
+
+.estilo {
+  background-color: #333333;
+  color: #7d7d7d;
+  font-family: 'Montserrat';
+  font-weight: 400;
+  display:inline-block;
+  padding:0.5em 1em;
+  font-size:15px;
+}
+
+.imoveis {
+  background-color: #a8daf4;
+  color: #333;
+  font-family: 'Montserrat';
+  font-weight: 400;
+  display:inline-block;
+  padding:0.5em 1em;
+  font-size:15px;
+}

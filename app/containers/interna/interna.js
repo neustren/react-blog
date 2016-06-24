@@ -8,7 +8,7 @@ import {Link} from 'react-router';
 
 import Destaque from '../../components/destaque/destaque';
 import Historias from '../../components/historias/historias';
-import LeiaMais from '../../components/leiamais/leiamais';
+
 import PostagemCompleta from '../../components/postagemCompleta/postagemCompleta';
 
 export default class Interna extends Component {
@@ -55,7 +55,7 @@ return (
 
 
     {/*<Historias></Historias>*/}
-    <LeiaMais></LeiaMais>
+
     <Destaque></Destaque>
 
   </div>

@@ -20,8 +20,8 @@ export default class Assinatura extends Component {
     var leitura = props.cor ? leituraIcone : leituraIconeCinza;
 return (
 <div className={styles.descricaoBanner} style={{color: cor}}>
-  <div className={styles.preNomeAutorBanner}>por</div>
-  <div className={styles.nomeAutorBanner} style={{color: corAutor}}>{props.autor}</div>
+  {/*<div className={styles.preNomeAutorBanner}>por</div>
+  <div className={styles.nomeAutorBanner} style={{color: corAutor}}>{props.autor}</div>*/}
   <div className={styles.mobileBlock}>
     <img className={styles.iconeDescricaoBanner} src={data}></img>
     <div className={styles.dataBanner}>{props.data}</div>

@@ -1,3 +1,10 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700,900);
+
+.barraLateralShare {
+  position: absolute;
+  left: 10%;
+  top: 60%;
+}
 .imagemBanner {
   height:330px;
   width: 100%;
@@ -6,12 +13,24 @@
   display: flex;
 align-items: flex-end;
 }
+.subtitulo {
+  font-size: 32px;
+  margin-bottom:1em;
+  color: #999999;
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
 .shareCollumn {
   display: block;
 margin-left: auto;
 margin-right: auto;
 margin-top: 2em;
     border: 5px solid #ffffff;
+}
+.textoPostagem > p > img {
+  max-width: 100% !important;
+  height: auto;
 }
 .shareCollumn:hover {
 background-color: #d6d6d6;
@@ -25,8 +44,11 @@ background-color: #d6d6d6;
       margin-top: 1em;
 }
 .textoPostagem {
-  margin-top: 2em;
+
   margin-bottom: 2em;
+}
+.boxTodoTexto {
+  margin-top:2em;
 }
 .corCategoria {
   color: black;
@@ -48,10 +70,10 @@ background-color: #d6d6d6;
       margin-top: 0.4em;
 }
 .informacoesBanner {
-  width: 70%;
+  /*width: 70%;*/
   margin-bottom: 2em;
-  margin-left: auto;
-  margin-right: auto;
+  /*margin-left: auto;
+  margin-right: auto;*/
 }
 .backgroundBanner {
       background: -webkit-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.9));
@@ -177,7 +199,7 @@ only screen and (max-width: 767px) {
       width: 50%;
     }
     .informacoesBanner {
-      width: 90%;
+      /*width: 90%;*/
     }
     .acaoAnterior {
       display:block;
