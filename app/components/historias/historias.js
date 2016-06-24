@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 
-import styles from './historias.less';
+import styles from './historias.css';
 import {Link} from 'react-router';
 
 
@@ -19,7 +19,8 @@ export default class Historias extends Component {
 
 return (
 
-<div style={{backgroundImage: 'url(' + Centro + ')'}} className={styles.backgroundOpaco}>
+
+<div className={styles.backgroundOpaco} style={{backgroundImage: 'url(' + Centro + ')'}}>
   <div className={styles.opacidadeAqui}>
   <div className={styles.materiasEmDestaque}>MATÉRIAS EM DESTAQUE</div>
   <div className={styles.caixaImagem}>
@@ -44,6 +45,7 @@ return (
   </div>
 </div>
 </div>
+
 )
 }
 }

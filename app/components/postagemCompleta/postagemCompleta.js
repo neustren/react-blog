@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import client from 'superagent';
-import styles from './postagemCOmpleta.css';
+import styles from './postagemCompleta.css';
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -8,50 +8,66 @@ import { bindActionCreators } from 'redux';
 // import { ROOT_URL }  from '../../actions/index';
 // import { postOpened } from '../../actions/postOpened';
 import { getPostOpened } from '../../actions/postOpened';
-
+// var HtmlToReact = new require('html-to-react');
+// import HtmlToReact from 'html-to-react';
 
 class postagemCompleta extends Component {
 
   componentDidMount() {
-    let postagem = this.props.state.postOpened;
-
+    let postagem = this.props.state.postOpened.post;
+    console.log(postagem);
     if(!postagem) {
+      console.log('disparou');
        this.props.getPostOpened(this.props.params);
     }
     // this.setState({ servicos: this.props.lavanderia.Services});
   }
 
-render() {
-
-      var categoria = "Finanças";
-    var titulo = "Inadimplência: perspectivas continuam negativas para 2016";
-       var subTitulo = "Desemprego e a falta de educação são os dois maiores motivos, segundo pesquisa.";
-       var autor = "Isabella Abreu";
-       var data = "22/02/2015";
-       var tempo = "5 min";
+renderPostagem() {
 
 
-
-    const banner = require('../../img/banner.png');
-    const fbCinzaIcon = require('../../img/fbCinzaIcon.png');
-    const twCinzaIcon = require('../../img/twCinzaIcon.png');
-    const cmCinzaIcon = require('../../img/cmCinzaIcon.png');
-    const lkCinzaIcon = require('../../img/lkCinzaIcon.png');
-    const Facebook = require('../../img/Facebook.png');
-    const Twitter = require('../../img/Twitter.png');
-    const Linkedin = require('../../img/Linkedin.png');
-    const fbBrancoIcon = require('../../img/fbBrancoIcon.png');
-    const twBrancoIcon = require('../../img/twBrancoIcon.png');
-    const lkBrancoIcon = require('../../img/lkBrancoIcon.png');
-
-   const entrenaconversamobile = require('../../img/entrenaconversamobile.png');
-   const entrenaconversadesktop = require('../../img/entrenaconversadesktop.png');
+  var post = this.props.state.postOpened.post;
+  console.log(post);
+if(post) {
 
 
 
 
+const banner = require('../../img/banner.png');
+const fbCinzaIcon = require('../../img/fbCinzaIcon.png');
+const twCinzaIcon = require('../../img/twCinzaIcon.png');
+const cmCinzaIcon = require('../../img/cmCinzaIcon.png');
+const lkCinzaIcon = require('../../img/lkCinzaIcon.png');
+const Facebook = require('../../img/Facebook.png');
+const Twitter = require('../../img/Twitter.png');
+const Linkedin = require('../../img/Linkedin.png');
+const fbBrancoIcon = require('../../img/fbBrancoIcon.png');
+const twBrancoIcon = require('../../img/twBrancoIcon.png');
+const lkBrancoIcon = require('../../img/lkBrancoIcon.png');
+
+const entrenaconversamobile = require('../../img/entrenaconversamobile.png');
+const entrenaconversadesktop = require('../../img/entrenaconversadesktop.png');
+
+
+  var dataFinal = post.date.slice(8,10) + '/' + post.date.slice(5,7) + '/' + post.date.slice(0,4);
+  var minutosPraLer = post.minutos_para_ler ? post.minutos_para_ler[0] : '';
+
+  var categoria = post.categories[0];
+var titulo = post.title;
+   var subTitulo = post.Subtitulo;
+   var autor = "Brasilcap";
+   var data = dataFinal;
+   var tempo = minutosPraLer;
+   var texto = JSON.stringify(post.content.rendered);
+   console.log(texto);
+
+  //  var htmlInput = texto;
+  //  var htmlToReactParser = new HtmlToReact.Parser(React);
+  //  var reactComponent = htmlToReactParser.parse(htmlInput);
+  //  var reactHtml = React.renderToStaticMarkup(reactComponent);
   return (
     <div>
+
     <div className={`${styles.imagemBanner}`} style={{ backgroundImage: 'url(' + banner + ')' }}>
       <div className={styles.backgroundBanner}>
         <div className="container">
@@ -77,8 +93,8 @@ render() {
           <img className={styles.shareCollumn} src={cmCinzaIcon}></img>
         </div>
         <div className="col-md-8 col-lg-8 col-xl-8 col-sm-8 col-xs-12">
-          <div className={styles.textoPostagem}>
-            TEXTO TODO VEM AQUI DENTRO
+          <div dangerouslySetInnerHTML={{_html: texto}} className={styles.textoPostagem}>
+
           </div>
           <div className={styles.linhaCompartilhar}>
             <div className={styles.caixaAzul}>
@@ -101,6 +117,17 @@ render() {
         </div>
       </div>
     </div>
+  </div>
+  )
+}
+}
+render() {
+
+
+
+  return (
+    <div>
+    {this.renderPostagem()}
   </div>
   )
 }

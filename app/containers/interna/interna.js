@@ -54,7 +54,7 @@ return (
     <div className={styles.corpo}>
 
 
-    <Historias></Historias>
+    {/*<Historias></Historias>*/}
     <LeiaMais></LeiaMais>
     <Destaque></Destaque>
 
