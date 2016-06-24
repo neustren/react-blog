@@ -8,8 +8,7 @@ import { bindActionCreators } from 'redux';
 // import { ROOT_URL }  from '../../actions/index';
 // import { postOpened } from '../../actions/postOpened';
 import { getPostOpened } from '../../actions/postOpened';
-// var HtmlToReact = new require('html-to-react');
-// import HtmlToReact from 'html-to-react';
+
 
 class postagemCompleta extends Component {
 
@@ -52,19 +51,14 @@ const entrenaconversadesktop = require('../../img/entrenaconversadesktop.png');
   var dataFinal = post.date.slice(8,10) + '/' + post.date.slice(5,7) + '/' + post.date.slice(0,4);
   var minutosPraLer = post.minutos_para_ler ? post.minutos_para_ler[0] : '';
 
-  var categoria = post.categories[0];
-var titulo = post.title;
-   var subTitulo = post.Subtitulo;
-   var autor = "Brasilcap";
+  var categoria = "Finanças";
+var titulo = "Inadimplência: perspectivas continuam negativas para 2016";
+   var subTitulo = "Desemprego e a falta de educação são os dois maiores motivos, segundo pesquisa.";
+   var autor = "Isabella Abreu";
    var data = dataFinal;
    var tempo = minutosPraLer;
-   var texto = JSON.stringify(post.content.rendered);
-   console.log(texto);
 
-  //  var htmlInput = texto;
-  //  var htmlToReactParser = new HtmlToReact.Parser(React);
-  //  var reactComponent = htmlToReactParser.parse(htmlInput);
-  //  var reactHtml = React.renderToStaticMarkup(reactComponent);
+
   return (
     <div>
 
@@ -93,8 +87,8 @@ var titulo = post.title;
           <img className={styles.shareCollumn} src={cmCinzaIcon}></img>
         </div>
         <div className="col-md-8 col-lg-8 col-xl-8 col-sm-8 col-xs-12">
-          <div dangerouslySetInnerHTML={{_html: texto}} className={styles.textoPostagem}>
-
+          <div className={styles.textoPostagem}>
+            TEXTO TODO VEM AQUI DENTRO
           </div>
           <div className={styles.linhaCompartilhar}>
             <div className={styles.caixaAzul}>
