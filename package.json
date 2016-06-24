@@ -82,6 +82,7 @@
     "react-transform-hmr": "^1.0.4",
     "redux": "^3.4.0",
     "redux-thunk": "^2.0.1",
+    "remote-redux-devtools": "^0.3.3",
     "serialize-javascript": "^1.2.0",
     "serve-favicon": "^2.3.0",
     "strip-loader": "^0.1.2",

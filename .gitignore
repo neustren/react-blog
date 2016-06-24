@@ -2,3 +2,5 @@ node_modules/
 assets/
 static/dist/
 webpack-assets.json
+npm-debug.log
+package.json
