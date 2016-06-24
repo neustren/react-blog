@@ -57,7 +57,7 @@ var titulo = "Inadimplência: perspectivas continuam negativas para 2016";
    var autor = "Isabella Abreu";
    var data = dataFinal;
    var tempo = minutosPraLer;
-
+   var texto=post.content.rendered;
 
   return (
     <div>
@@ -87,8 +87,8 @@ var titulo = "Inadimplência: perspectivas continuam negativas para 2016";
           <img className={styles.shareCollumn} src={cmCinzaIcon}></img>
         </div>
         <div className="col-md-8 col-lg-8 col-xl-8 col-sm-8 col-xs-12">
-          <div className={styles.textoPostagem}>
-            TEXTO TODO VEM AQUI DENTRO
+          <div dangerouslySetInnerHTML={function() {return {__html: texto}}()} className={styles.textoPostagem}>
+
           </div>
           <div className={styles.linhaCompartilhar}>
             <div className={styles.caixaAzul}>
