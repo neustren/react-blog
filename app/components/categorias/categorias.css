@@ -4,9 +4,9 @@
   background-color: red;
 }
 
-.mundo {
-  background-color: #005aa1;
-  color: #fff;
+.capitalizacao {
+  background-color: #bbbbbb;
+  color: #484848;
   font-family: 'Montserrat';
   font-weight: 400;
   display:inline-block;
@@ -15,8 +15,8 @@
 }
 
 .financas {
-  background-color: #ffef00;
-  color: #333;
+  background-color:#fff001;
+  color: #9c911e;
   font-family: 'Montserrat';
   font-weight: 400;
   display:inline-block;
@@ -24,9 +24,9 @@
   font-size:15px;
 }
 
-.estilo {
-  background-color: #333333;
-  color: #7d7d7d;
+.meio_ambiente {
+  background-color: #67b359;
+  color: #335228;
   font-family: 'Montserrat';
   font-weight: 400;
   display:inline-block;
@@ -34,9 +34,9 @@
   font-size:15px;
 }
 
-.imoveis {
-  background-color: #a8daf4;
-  color: #333;
+.atualidades {
+  background-color: #a8daf5;
+  color: #39677f;
   font-family: 'Montserrat';
   font-weight: 400;
   display:inline-block;

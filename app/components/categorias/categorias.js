@@ -33,20 +33,22 @@ class Categorias extends Component {
             if (id == categoriaDoPost) {
               var slug = categories[i].slug;
             var name = categories[i].name;
+                            console.log(slug);
               switch (slug) {
-                case 'mundo':
+
+                case 'capitalizacao':
                 return (
-                      <div key={id} className={styles.mundo}>{name}</div>
+                      <div key={id} className={styles.capitalizacao}>{name}</div>
                 )
                   break;
-                case 'estilo':
+                case 'atualidades':
                 return (
-                <div key={id} className={styles.estilo}>{name}</div>
+                <div key={id} className={styles.atualidades}>{name}</div>
                 )
                   break;
-                case 'imoveis':
+                case 'meio_ambiente':
                                 return (
-                      <div key={id} className={styles.imoveis}>{name}</div>
+                      <div key={id} className={styles.meio_ambiente}>{name}</div>
                       )
                   break;
                 case 'financas':

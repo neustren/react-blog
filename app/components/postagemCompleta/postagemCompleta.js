@@ -28,7 +28,7 @@ renderPostagem() {
 
 
   var post = this.props.state.postOpened.post;
-  console.log(post);
+
 if(post) {
 
 

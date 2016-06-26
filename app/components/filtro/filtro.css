@@ -14,95 +14,95 @@
 
 }
 .recente {
-  color:#fff;
-  background-color: #67b35a;
-  border-top: 0.5em solid #67b35a;
+  color:#233063;
+  background-color: #0d62a5;
+  border-top: 0.5em solid #0d62a5;
     transition: 0.5s;
 }
 .recente:hover {
-  color:#67b35a;
+  color:#005aa1;
   transition: 0.5s;
   background-color: #fff;
-  border-top: 0.5em solid #67b35a;
+  border-top: 0.5em solid #233063;
 }
 .recenteSelected {
-  color:#67b35a;
+  color:#005aa1;
   background-color: #fff;
       transition: 0.5s;
-  border-top: 0.5em solid #67b35a;
+  border-top: 0.5em solid #233063;
 }
 
 .financas {
-  color:#ff9b00;
-  background-color: #ffef00;
+  color:#9c911e;
+  background-color: #fff001;
       transition: 0.5s;
-  border-top: 0.5em solid #ffef00;
+  border-top: 0.5em solid #fff001;
 }
 .financasSelected {
-  color:#ff9b00;
+  color:#fedc18;
       transition: 0.5s;
   background-color: #fff;
-  border-top: 0.5em solid #ff9b00;
+  border-top: 0.5em solid #9c911e;
 }
 .financas:hover {
-  color:#ff9b00;
+  color:#fedc18;
       transition: 0.5s;
   background-color: #fff;
-  border-top: 0.5em solid #ff9b00;
+  border-top: 0.5em solid #9c911e;
 }
 .mundo {
-  color:#001d58;
-  background-color: #005aa1;
+  color:#484848;
+  background-color: #bbbbbb;
       transition: 0.5s;
-  border-top: 0.5em solid #005aa1;
+  border-top: 0.5em solid #bbbbbb;
 }
 .mundoSelected {
-  color:#005aa1;
+  color:#bbbbbb;
   background-color: #fff;
       transition: 0.5s;
-  border-top: 0.5em solid #005aa1;
+  border-top: 0.5em solid #484848;
 }
 .mundo:hover {
-  color:#005aa1;
+  color:#bbbbbb;
   background-color: #fff;
       transition: 0.5s;
-  border-top: 0.5em solid #005aa1;
+  border-top: 0.5em solid #484848;
 }
 .imoveis {
-  color:#4c7e98;
-  background-color: #a8daf4;
+  color:#39677f;
+  background-color: #a8daf5;
       transition: 0.5s;
-  border-top: 0.5em solid #a8daf4;
+  border-top: 0.5em solid #a8daf5;
 }
 .imoveisSelected {
-  color:#40baff;
+  color:#97d2f2;
   background-color: #fff;
       transition: 0.5s;
-  border-top: 0.5em solid #40baff;
+  border-top: 0.5em solid #39677f;
 }
 .imoveis:hover {
-  color:#40baff;
+  color:#97d2f2;
   background-color: #fff;
       transition: 0.5s;
-  border-top: 0.5em solid #40baff;
+  border-top: 0.5em solid #39677f;
 }
 .estilos {
-  color:#7d7d7d;
-  background-color: #333333;
+  color:#335228;
+  background-color: #67b359;
       transition: 0.5s;
-  border-top: 0.5em solid #333333;
+  border-top: 0.5em solid #67b359;
 }
 .estilosSelected {
-  color:#333333;
+  color:#67b359;
   background-color: #fff;
       transition: 0.5s;
-  border-top: 0.5em solid #333333;
+  border-top: 0.5em solid #335228;
 }
 .estilos:hover {
-  color:#333333;
+  color:#67b359;
   background-color: #fff;
       transition: 0.5s;
-  border-top: 0.5em solid #333333;
+  border-top: 0.5em solid #335228;
 }
 .nomeFiltro {
   display: inline-block;
