@@ -27,6 +27,7 @@ console.log("disparou");
     if(catsPostsA) {
       var count = 0;
       return catsPostsA.map((pt) => {
+
         if(pt.id == post) {
           return (<div key="samepost"></div>)
         }
@@ -34,9 +35,8 @@ console.log("disparou");
           return;
         } else {
           count++;
-          console.log(count);
           return (
-            <Post key={post} noimage={true} data={pt}></Post>
+            <Post key={pt.id} noimage={true} data={pt}></Post>
           )
         }
       })

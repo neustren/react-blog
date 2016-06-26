@@ -61,8 +61,8 @@ return (
 <div className={`${imagem ? styles.imagemDisplay : styles.imagemNotDisplay}`}>
 {imagem ? (<img onClick={() => {this.joinPost();}} src={imagem} className={styles.imagemBlog}></img>) : (<div></div>)}
 <div className={styles.textos}>
-<div onClick={() => {this.joinPost();}} className={`${noimage ? styles.tituloInt : styles.titulo}`} style={{marginTop: imagemMargin}}>6 dicas para você sair da mesmice e atingir o sucesso.</div>
-<div className={`${noimage ? styles.subtituloInt : styles.subtitulo}`}>O que tem impedido você de chegar lá provavelmente tem que ver com seus comportamentos.</div>
+<div onClick={() => {this.joinPost();}} className={`${noimage ? styles.tituloInt : styles.titulo}`} style={{marginTop: imagemMargin}}>{data.title.rendered}</div>
+<div className={`${noimage ? styles.subtituloInt : styles.subtitulo}`}>{data.Subtitulo[0]}</div>
 <Assinatura data={dataFinal} tempo={minutosPraLer} autor="Brasilcap"></Assinatura>
 </div>
 </div>

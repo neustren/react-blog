@@ -69,6 +69,7 @@
     "jquery": "^2.2.3",
     "less": "^2.6.1",
     "less-loader": "^2.2.3",
+    "lodash": "^4.13.1",
     "piping": "^0.3.0",
     "postcss-loader": "^0.8.2",
     "pretty-error": "^2.0.0",

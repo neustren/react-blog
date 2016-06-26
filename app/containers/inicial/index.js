@@ -16,7 +16,7 @@ export default class Inicial extends Component {
 
     return (
     <div>
-      <Header></Header>
+      {/*<Header></Header>*/}
       <Slider></Slider>
       <Filtro></Filtro>
       <PostsInicial></PostsInicial>

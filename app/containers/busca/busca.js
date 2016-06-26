@@ -2,29 +2,45 @@ import React, {Component} from 'react';
 
 import Header from '../../components/header/header';
 import Footer from '../../components/footer/footer';
-import styles from './interna.less';
+import styles from './busca.css';
 import {Link} from 'react-router';
-    import Assinatura from '../../components/assinatura/assinatura';
+import SearchForm from '../../components/searchForm/searchForm';
+import SearchResponse from '../../components/searchResponse/searchResponse';
+//     import Assinatura from '../../components/assinatura/assinatura';
+//
+// import Destaque from '../../components/destaque/destaque';
+// import Historias from '../../components/historias/historias';
+//
+// import PostagemCompleta from '../../components/postagemCompleta/postagemCompleta';
 
-import Destaque from '../../components/destaque/destaque';
-import Historias from '../../components/historias/historias';
+export default class Busca extends Component {
 
-import PostagemCompleta from '../../components/postagemCompleta/postagemCompleta';
-
-export default class Interna extends Component {
-
-  componentDidMount() {
-    let parm = this.props.params.id;
-    if(!parm) {
-            this.context.router.push('/');
-    }
-
-    // this.setState({ servicos: this.props.lavanderia.Services});
-  }
+  // componentDidMount() {
+  //   let parm = this.props.params.id;
+  //   if(!parm) {
+  //           this.context.router.push('/');
+  //   }
+  //
+  //   // this.setState({ servicos: this.props.lavanderia.Services});
+  // }
 
   // this.setState({ servicos: this.props.lavanderia.Services});
 
 
+
+  renderPosts() {
+    let postagens = this.props.state.postsByCategory;
+
+    if(postagens) {
+      return postagens.posts.map((post) => {
+        return (
+
+        <Post key={post.id} data={post}></Post>
+
+      )
+      })
+    }
+  }
 
   render() {
 
@@ -46,21 +62,11 @@ export default class Interna extends Component {
 
 return (
 
-<div className={styles.base}>
-  {/*<Header></Header>*/}
+<div className={`container ${styles.base}`}>
 
+<SearchForm></SearchForm>
+<SearchResponse></SearchResponse>
 
-  <PostagemCompleta params={this.props.params.id}></PostagemCompleta>
-    <div className={styles.corpo}>
-
-
-    {/*<Historias></Historias>*/}
-
-    <Destaque></Destaque>
-
-  </div>
-
-  <Footer></Footer>
 </div>
 )
 }

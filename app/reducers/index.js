@@ -5,13 +5,15 @@ import postOpened from './postOpened';
 import { routeReducer } from 'react-router-redux';
 import tags from './tags';
 import categories from './categories';
+import search from './search';
 
 var reducers =  {
     selectedCategory:selectedCategory,
     postsByCategory: postsByCategory,
     postOpened: postOpened,
     tags: tags,
-    categories: categories
+    categories: categories,
+    search: search
 };
 
 export default reducers;
