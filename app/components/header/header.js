@@ -9,6 +9,8 @@ import { bindActionCreators } from 'redux';
 import { getTags } from '../../actions/tags';
 import { getCategories } from '../../actions/categories';
 import { searchOn } from '../../actions/search';
+import Contato from '../../components/contato/contato';
+import { showModal } from '../../actions/modal';
 
 class Header extends Component {
   static contextTypes = {
@@ -19,7 +21,7 @@ class Header extends Component {
     super(props);
     this.state = {
       searchQuery: '',
-      searchOn: false
+      searchOn: false,
     };
   }
 
@@ -28,6 +30,14 @@ class Header extends Component {
      this.props.getCategories();
     // this.setState({ servicos: this.props.lavanderia.Services});
   }
+  close() {
+  this.props.showModal(false);
+}
+
+open() {
+  console.log(this);
+this.props.showModal(true);
+}
 
 searchStart(e) {
   var search = 'go';
@@ -50,6 +60,7 @@ searchStart(e) {
     const mail = require('../../img/Mail.png');
     const lupa = require('../../img/Lupa.png');
     const div = require('../../img/Div.png');
+
     const fecharBusca = require('../../img/fecharBusca.png');
       var searchOn = this.props.state.search.searchOn;
 return (
@@ -62,12 +73,14 @@ return (
       <div className={styles.NomeBlog}>Nome do Blog</div>
     </div>
     <div className={styles.IconesHeader}>
-      <img width="21" height="20" className={styles.iconeIndividual} src={mail}></img>
+      <img width="21" height="20" className={styles.iconeIndividual} onClick={(e) => {this.open();}} src={mail}></img>
       <img className={styles.iconeIndividual} src={div}></img>
       <img onClick={(e) => {this.searchStart();}} width="20" height="20" className={styles.iconeIndividual} src={searchOn ? fecharBusca : lupa}></img>
     </div>
+
   </div>
-  </div>
+<Contato></Contato>
+</div>
 </div>
 )
 }
@@ -79,7 +92,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ getTags, getCategories, searchOn }, dispatch);
+  return bindActionCreators({ getTags, getCategories, searchOn, showModal }, dispatch);
 }
 
 export default connect( mapStateToProps, mapDispatchToProps)(Header);

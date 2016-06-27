@@ -4,8 +4,19 @@ import Slider from '../../components/slider/slider';
 
 import styles from './footer.less';
 import {Link} from 'react-router';
+import { showModal } from '../../actions/modal';
+import {connect} from 'react-redux';
+import { bindActionCreators } from 'redux';
+import Contato from '../../components/contato/contato';
 
-export default class Footer extends Component {
+class Footer extends Component {
+
+  open() {
+    console.log(this);
+  this.props.showModal(true);
+  }
+
+
   render() {
     const logobrasilcap = require('../../img/logobrasilcap.png');
     const facebookIcon = require('../../img/facebookIcon.png');
@@ -21,7 +32,7 @@ return (
     <div className={styles.nomeBlog}>Nome do Blog</div>
     <div className={styles.redesSociais}>
       <div className={styles.boxTodas}>
-      <div className={styles.redeSociaisIndividuais}>
+      <div onClick={(e) => {this.open();}} className={styles.redeSociaisIndividuais}>
         <img className={styles.iconeRedeSocial} src={mailIcon}></img>
         <div className={styles.nomeRedeSocial}>CONTATO</div>
       </div>
@@ -43,7 +54,19 @@ return (
     <div className={styles.madeBy}>
     Desenvolvido por <div className={styles.btg}>BTG Agência</div></div>
   </div>
+  <Contato></Contato>
 </div>
 )
 }
 }
+function mapStateToProps(state) {
+  return {
+    state
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ showModal }, dispatch);
+}
+
+export default connect( mapStateToProps, mapDispatchToProps)(Footer);
