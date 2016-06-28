@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import client from 'superagent';
-import styles from './post.css';
+import styles from './post.scss';
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -25,15 +25,15 @@ class Post extends Component {
 
     var data = this.props.data;
     var that = this;
-    if (data.featured_media) {
-
-
-      client.get(`${ROOT_URL}/wp-json/wp/v2/media/${data.featured_media}`)
-        .end(function(err,data) {
-          var res = JSON.parse(data.text);
-          that.setState({ imagem: res.source_url});
-    });
-  }
+  //   if (data.featured_media) {
+  //
+  //
+  //     client.get(`${ROOT_URL}/wp-json/wp/v2/media/${data.featured_media}`)
+  //       .end(function(err,data) {
+  //         var res = JSON.parse(data.text);
+  //         that.setState({ imagem: res.source_url});
+  //   });
+  // }
 }
 
 joinPost() {
@@ -46,10 +46,13 @@ joinPost() {
 
     var noimage = this.props.noimage;
     const leao = require('../../img/leao.png');
-    var imagem = this.props.noimage ? null :  this.state.imagem;
+    //var imagem = this.props.noimage ? null :  this.state.imagem;
+
+
+    var data = this.props.data;
+    var imagem= data.preview_image || data.banner || null;
     var imagemDisplay = imagem ? 'inline-flex' : 'block';
     var imagemMargin = imagem ? '0em' : '0.5em';
-    var data = this.props.data;
     var categories = data.categories;
 
     var dataFinal = data.date.slice(8,10) + '/' + data.date.slice(5,7) + '/' + data.date.slice(0,4);
@@ -59,7 +62,7 @@ return (
 <div className={`${noimage ? styles.baseInt : styles.base}`}>
 <Categorias opcoes={categories}></Categorias>
 <div className={`${imagem ? styles.imagemDisplay : styles.imagemNotDisplay}`}>
-{imagem ? (<img onClick={() => {this.joinPost();}} src={imagem} className={styles.imagemBlog}></img>) : (<div></div>)}
+{imagem ? (<div onClick={() => {this.joinPost();}}  className={styles.imagemBlog}><div className={styles.content} style={{backgroundImage: `url('${imagem}')`, backgroundSize: 'cover'}}></div></div>) : (<div></div>)}
 <div className={styles.textos}>
 <div onClick={() => {this.joinPost();}} className={`${noimage ? styles.tituloInt : styles.titulo}`} style={{marginTop: imagemMargin}}>{data.title.rendered}</div>
 <div className={`${noimage ? styles.subtituloInt : styles.subtitulo}`}>{data.Subtitulo[0]}</div>

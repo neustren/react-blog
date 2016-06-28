@@ -20,6 +20,7 @@ class Categorias extends Component {
   renderCategory(post) {
     console.log(this.props);
     var categoriaDoPost = this.props.opcoes;
+    if(!categoriaDoPost) return (<div></div>);
     var categories = {4: {"name":"Atualidades","slug":"atualidades","id":4},3 : {"name":"Capitalização","slug":"capitalizacao","id":3}, 9: {"name":"Destaque","slug":"destaque","id":9}, 2: {"name":"Finanças","slug":"financas","id":2}, 1: {"name":"Invisível","slug":"invisivel","id":1}, 5: {"name":"Meio Ambiente","slug":"meio_ambiente","id":5}};
     var l = categoriaDoPost.length;
                   var n = 0;

@@ -17,6 +17,8 @@ justify-content: space-between;
       display: inline-block;
 }
 .NomeBlog {
+  color: #fff;
+    text-decoration: none;
   display: inline-block;
   margin-left: 0.5em;
   font-size: 1.3em;

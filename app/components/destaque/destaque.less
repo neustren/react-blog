@@ -1,20 +1,87 @@
 
 // destaque
+.sliderWrapper {
+  height: 450px;
+  max-height: 450px;
+  position: relative;
+  -webkit-transform: translateZ(0);
+  cursor:ew-resize;
+}
+
+.controleSlider {
+
+/*  justify-content: space-between;*/
+  //margin-bottom: 2em;
+  //margin-top: -50px;
+  margin-top: 10px;
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  .paginacaoDestaque {
+    position: absolute;
+    bottom: 0;
+  }
+
+
+}
+
+.Slider {
+  transition: none;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  display: flex;
+  flex-flow: column wrap;
+  width: 100vw;
+  overflow-x: hidden;
+  height: 450px;
+  max-height: 450px;
+  -webkit-touch-callout: none; /* iOS Safari */
+-webkit-user-select: none;   /* Chrome/Safari/Opera */
+-khtml-user-select: none;    /* Konqueror */
+-moz-user-select: none;      /* Firefox */
+-ms-user-select: none;       /* Internet Explorer/Edge */
+user-select: none;
+
+}
+
+.Slider::-webkit-scrollbar {
+  width: 0px;
+  /* remove scrollbar space */
+  background: transparent;
+  /* optional: just make scrollbar invisible */
+}
 
 .backgroundOpaco {
-  background-size: 100% 100%;
+  height: 450px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
+  display: flex;
+align-items: flex-start;
 }
 .caixaImagem {
   text-align: center;
   position: relative;
-  margin-bottom: 40px;
+//  margin-bottom: 40px;
       width: 100%;
 }
 .opacidadeAqui {
   background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8));
-  padding-top: 3em;
-  padding-bottom: 3em;
+//  padding-top: 3em;
+width: 100%;
+height: 100%;
+display: flex;
+flex-flow: column;
+justify-content: center;
+
+//  padding-bottom: 3em;
 }
 .materiasEmDestaque {
   color: white;
@@ -25,12 +92,18 @@
   font-weight: bold;
 }
 .imagemDestaque {
-  width: 30%;
+  display: block;
+  margin: auto;
+  width: auto;
+  max-width: 50%;
+  height: auto;
+  max-height: 200px;
 }
 .descricaoBanner {
   margin-top: 0.4em;
   color:white;
   text-align:center;
+
 }
 .nomeAutorBanner {
 
@@ -60,6 +133,7 @@ margin-right: 1em;
   font-size:1.4em;
 }
 .descricaoDestaque {
+  margin-top: 15px;
   width: 40%;
   margin-right:auto;
   margin-left:auto;
@@ -80,10 +154,20 @@ margin-right: 1em;
 .paginacaoDestaque {
   display: flex;
 justify-content: space-around;
-width: 50%;
+  width: 100%;
 margin-left: auto;
 margin-right: auto;
 margin-top: 2em;
+margin-bottom: 2em;
+.pagWrapper {
+  width: 50%;
+  img:first-child {
+    float: left;
+  }
+  img:last-child {
+    float:right;
+  }
+}
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 767px),
 only screen and ( min--moz-device-pixel-ratio: 2) and (max-width: 767px),

@@ -70,7 +70,9 @@ return (
     <div className={styles.headerIn}>
     <div className={styles.LogoNome}>
       <img src={logo}></img>
-      <div className={styles.NomeBlog}>Nome do Blog</div>
+      <Link to="/">
+      <div className={styles.NomeBlog}>Zero Perrengue</div>
+      </Link>
     </div>
     <div className={styles.IconesHeader}>
       <img width="21" height="20" className={styles.iconeIndividual} onClick={(e) => {this.open();}} src={mail}></img>

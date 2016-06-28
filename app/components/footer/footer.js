@@ -29,22 +29,22 @@ return (
 <div className={`${styles.footerFull}`}>
   <div className="container">
     <img src={logobrasilcap} className={styles.logobrasilcap}></img>
-    <div className={styles.nomeBlog}>Nome do Blog</div>
+    <div className={styles.nomeBlog}>Zero Perrengue</div>
     <div className={styles.redesSociais}>
       <div className={styles.boxTodas}>
       <div onClick={(e) => {this.open();}} className={styles.redeSociaisIndividuais}>
         <img className={styles.iconeRedeSocial} src={mailIcon}></img>
         <div className={styles.nomeRedeSocial}>CONTATO</div>
       </div>
-      <div className={styles.redeSociaisIndividuais}>
+      <div onClick={() => {window.location.href='https://www.facebook.com/Brasilcap/';}} className={styles.redeSociaisIndividuais}>
         <img className={styles.iconeRedeSocial} src={facebookIcon}></img>
-        <div className={styles.nomeRedeSocial}>FACEBOOK</div>
+        <div  className={styles.nomeRedeSocial}>FACEBOOK</div>
       </div>
-      <div className={styles.redeSociaisIndividuais}>
+      <div onClick={() => {window.location.href='https://twitter.com/brasilcapbr';}} className={styles.redeSociaisIndividuais}>
         <img className={styles.iconeRedeSocial} src={twitterIcon}></img>
-        <div className={styles.nomeRedeSocial}>TWITTER</div>
+        <div  className={styles.nomeRedeSocial}>TWITTER</div>
       </div>
-      <div className={styles.redeSociaisIndividuais}>
+      <div onClick={() => {window.location.href='https://www.linkedin.com/company/brasilcap';}} className={styles.redeSociaisIndividuais}>
         <img className={styles.iconeRedeSocial} src={linkedinIcon}></img>
         <div className={styles.nomeRedeSocial}>LINKEDIN</div>
       </div>
@@ -54,7 +54,7 @@ return (
     <div className={styles.madeBy}>
     Desenvolvido por <div className={styles.btg}>BTG Agência</div></div>
   </div>
-  <Contato></Contato>
+  {/*<Contato></Contato>*/}
 </div>
 )
 }

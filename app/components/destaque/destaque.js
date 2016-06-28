@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 
+import { ROOT_URL } from '../../actions/index';
+
+import $ from 'jquery';
 
 import styles from './destaque.less';
 import {Link} from 'react-router';
+import Categoria from '../categorias/categorias';
 
 
-export default class Destaque extends Component {
-  render() {
 const Centro = require('../../img/Centro.png');
 const dataIcone = require('../../img/dataIcone.png');
 const Mundo = require('../../img/Mundo.png');
@@ -14,33 +16,118 @@ const Financas = require('../../img/Financas.png');
 const Imoveis = require('../../img/Imoveis.png');
 const Direita = require('../../img/Direita.png');
 const Esquerda = require('../../img/Esquerda.png');
-return (
 
-<div style={{backgroundImage: 'url(' + Centro + ')'}} className={styles.backgroundOpaco}>
-  <div className={styles.opacidadeAqui}>
-  <div className={styles.materiasEmDestaque}>MATÉRIAS EM DESTAQUE</div>
-  <div className={styles.caixaImagem}>
-    <img src={Centro} className={styles.imagemDestaque}></img>
-    <div className={styles.tagFlutuante}>
-      <img src={Mundo} className={styles.imagemFlutuante}></img>
-    </div>
-  </div>
-  <div className={styles.descricaoDestaque}>
-  <div className={styles.tituloDestaque}>Invista em imóveis, mesmo que você more de aluguel</div>
-    <div className={styles.descricaoBanner} >
-      <div className={styles.preNomeAutorBanner}>por</div>
-      <div className={styles.nomeAutorBanner} >Isabella Abreu</div>
-        <img className={styles.iconeDescricaoBanner} src={dataIcone}></img>
-        <div className={styles.dataBanner}>22/02/2016</div>
+const sliderSetaEsquerdaBranca = require('../../img/aleEsqWhite.png');
+const sliderSetaEsquerdaCinza = require('../../img/aleEsqGrey.png');
+const sliderSetaDireitaBranca = require('../../img/aleDirWhite.png');
+const sliderSetaDireitaCinza = require('../../img/aleDirGrey.png');
+
+export default class Destaque extends Component {
+  constructor() {
+    super();
+    this.state={selected: 0, placeholder:[{}]};
+    this.dragging=false;
+  }
+
+  moveTo(n) {
+    if(this.halt||(n>this.state.placeholder.length-1)||(n<0)) return;
+    this.refs.slider.style.pointerEvents='none';
+    $(this.refs.slider).animate({
+    scrollLeft:window.innerWidth*n
+  }, 700);
+    setTimeout(function() {
+      this.halt=false;
+      this.refs.slider.style.pointerEvents='';
+      this.setState({selected: n});
+    }.bind(this), 700);
+    //this.startScroll=
+  }
+
+
+
+  componentDidMount() {
+    window.addEventListener('resize', function(){
+    this.refs.slider.scrollLeft=window.innerWidth*this.state.selected;
+    }.bind(this));
+    $.ajax({
+      url: ROOT_URL + '/wp-json/wp/v2/posts?categories=9',
+      success: function(r) {
+
+        this.setState({placeholder: r.map(function(a, i) {
+          var d=new Date(a.date);
+          return {
+            banner: a.banner||a.preview_image,
+            titulo: a.title.rendered,
+            subTitulo: a.Subtitulo[0],
+            data: ('0'+d.getDate()).slice(-2) + '/' + ('0' + (d.getMonth() + 1)).slice(-2) + '/' + d.getFullYear(),
+            autor: a.autor_name[0],
+            categories: a.categories,
+            tempo: a.minutos_para_ler[0],
+            slug: a.slug,
+            imagem: a.preview_image||a.banner
+
+          }
+        })});
+      }.bind(this)
+    });
+  }
+  render() {
+console.log(styles.Slider);
+return (
+  <div className={styles.sliderWrapper}>
+    <div className={styles.controleSlider}>
+        <div className={styles.materiasEmDestaque}>MATÉRIAS EM DESTAQUE</div>
+
+    <div className={styles.paginacaoDestaque}>
+      <div className={styles.pagWrapper}>
+      {(this.state.selected===0)&&(<img width="28" height="40" src={sliderSetaEsquerdaCinza}></img>)||(<img width="28" height="40" style={{cursor: 'pointer'}} onClick={this.moveTo.bind(this,this.state.selected-1)} src={sliderSetaEsquerdaBranca}></img>)}
+        {(this.state.selected===(this.state.placeholder.length-1))&&(<img width="28" height="40" src={sliderSetaDireitaCinza}></img>)||(<img width="28" height="40" onClick={this.moveTo.bind(this,this.state.selected+1)} style={{cursor: 'pointer'}} src={sliderSetaDireitaBranca}></img>)}
       </div>
     </div>
+    </div>
+    <div ref="slider"
+      onMouseDown={(e) => {console.log(e); e.persist(); this.startScroll=this.refs.slider.scrollLeft;  this.dragging=e.pageX||(e.pageX+1);}}
+        onMouseUp={(e) => {e.persist(); var dragging=this.dragging; this.dragging=false; if(e.pageX-dragging>200) {this.moveTo.call(this,this.state.selected-1);return;} else if(e.pageX-dragging<-200) {this.moveTo.call(this, this.state.selected+1); return;} this.moveTo.call(this,this.state.selected)}}
+        onMouseMove={(e) => {e.persist(); if(!this.dragging) return;  this.refs.slider.scrollLeft=this.startScroll-(e.pageX-this.dragging);}}
+        onMouseLeave={(e) => {if(this.dragging) {this.moveTo.call(this, this.state.selected); this.dragging=false}}}
+      className={styles.Slider}>
+      {this.state.placeholder.map(function(a, i) {
+          return <DesSlide {...a} key={i} />
+      })}
 
-  <div className={styles.paginacaoDestaque}>
-    <img src={Esquerda}></img>
-    <img src={Direita}></img>
-  </div>
+    </div>
+
 </div>
-</div>
+
 )
 }
+}
+
+class DesSlide extends Component {
+  render() {
+    var props=this.props;
+    return (<div style={{backgroundImage: 'url(' + props.banner + ')'}} className={styles.backgroundOpaco}>
+      <div className={styles.opacidadeAqui}>
+
+      <div className={styles.caixaImagem}>
+        <img src={props.imagem} className={styles.imagemDestaque}></img>
+        <div className={styles.tagFlutuante}>
+          {/*<img src={props.preview_image} className={styles.imagemFlutuante}></img>*/}
+          <Categoria opcoes={props.categories}></Categoria>
+        </div>
+      </div>
+      <div className={styles.descricaoDestaque}>
+      <div className={styles.tituloDestaque}>{props.titulo}</div>
+        <div className={styles.descricaoBanner} >
+          <div className={styles.preNomeAutorBanner}>por</div>
+          <div className={styles.nomeAutorBanner} >{props.autor}</div>
+            <img className={styles.iconeDescricaoBanner} src={dataIcone}></img>
+            <div className={styles.dataBanner}>{props.data}</div>
+          </div>
+        </div>
+
+
+    </div>
+  </div>)
+  }
 }

@@ -7,7 +7,27 @@ margin-left: auto;
 margin-right: auto;
 display: block;
 margin-top:2em;
+max-width: 480px;
 }
+
+.btnBlue {
+  cursor: pointer;
+  background: #005aa1;
+    /* border-bottom-color: #004d89; */
+    border-bottom: solid 4px #004d89;
+    max-width: 480px;
+    margin: auto;
+    padding: 14px;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    letter-spacing: 2px;
+    display: flex;
+align-items: center;
+justify-content: center;
+margin-left:10px;
+}
+
 @media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 767px),
 only screen and ( min--moz-device-pixel-ratio: 2) and (max-width: 767px),
 only screen and ( -o-min-device-pixel-ratio: 2/1) and (max-width: 767px),

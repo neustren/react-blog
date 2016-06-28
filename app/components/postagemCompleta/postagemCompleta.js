@@ -99,9 +99,9 @@ var titulo = post.title.rendered;
 
       <div className="container">
         <div className={`${styles.barraLateralShare} hidden-xs`}>
-          <img className={styles.shareCollumn} src={fbCinzaIcon}></img>
-          <img className={styles.shareCollumn} src={twCinzaIcon}></img>
-          <img className={styles.shareCollumn} src={lkCinzaIcon}></img>
+          <img onClick={() => window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location))} className={styles.shareCollumn} src={fbCinzaIcon}></img>
+          <img onClick={() => window.open('https://twitter.com/home?status='+encodeURIComponent(window.location))} className={styles.shareCollumn} src={twCinzaIcon}></img>
+          <img onClick={() => window.open('https://www.linkedin.com/shareArticle?mini=true&url='+encodeURIComponent(window.location)+'&title='+encodeURIComponent(titulo))} className={styles.shareCollumn} src={lkCinzaIcon}></img>
           <img className={styles.shareCollumn} src={cmCinzaIcon}></img>
         </div>
         <div className={styles.boxTodoTexto}>
@@ -111,13 +111,13 @@ var titulo = post.title.rendered;
 
           </div>
           <div className={styles.linhaCompartilhar}>
-            <div className={styles.caixaAzul}>
+            <div onClick={() => window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location))} className={styles.caixaAzul}>
               <img className={styles.shareRow} src={fbBrancoIcon}></img>
             </div>
-            <div className={styles.caixaAzul}>
+            <div onClick={() => window.open('https://twitter.com/home?status='+encodeURIComponent(window.location))} className={styles.caixaAzul}>
               <img className={styles.shareRow} src={twBrancoIcon}></img>
             </div>
-            <div className={styles.caixaAzul}>
+            <div onClick={() => window.open('https://www.linkedin.com/shareArticle?mini=true&url='+encodeURIComponent(window.location)+'&title='+encodeURIComponent(titulo))} className={styles.caixaAzul}>
               <img className={styles.shareRow} src={lkBrancoIcon}></img>
             </div>
           </div>

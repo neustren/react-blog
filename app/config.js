@@ -15,10 +15,12 @@ module.exports = Object.assign({
   app: {
     title: 'Zero Perrengue',
     description: 'All the modern best practices in a blog.',
+
     meta: {
+      author: 'Effy Ltda. - www.effy.com.br',
       charSet: 'utf-8',
       property: {
-    
+
       }
     }
   }

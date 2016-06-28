@@ -3,6 +3,7 @@ import styles from './slider.css';
 import Assinatura from '../../components/assinatura/assinatura';
 import Categorias from '../../components/categorias/categorias';
 import $ from 'jquery';
+require('../../helpers/dotdotdot');
 
 import { ROOT_URL } from '../../actions/index';
 
@@ -36,6 +37,7 @@ export default class Slider extends Component {
     window.addEventListener('resize', function(){
     this.refs.slider.scrollLeft=window.innerWidth*this.state.selected;
   }.bind(this));
+
     $.ajax({
       url: ROOT_URL + '/wp-json/wp/v2/posts?categories=9',
       success: function(r) {
@@ -49,12 +51,14 @@ export default class Slider extends Component {
             data: ('0'+d.getDate()).slice(-2) + '/' + ('0' + (d.getMonth() + 1)).slice(-2) + '/' + d.getFullYear(),
             autor: a.autor_name[0],
             categories: a.categories,
-            tempo: a.minutos_para_ler[0]
+            tempo: a.minutos_para_ler[0],
+            slug: a.slug
 
           }
         })});
       }.bind(this)
     });
+
   }
 
 
@@ -153,18 +157,42 @@ export default class Slider extends Component {
   }
 }
 
-function Slide(props) {
+class Slide extends Component {
+  joinPost() {
+
+        this.context.router.push('/post/'+this.props.slug);
+
+  }
+
+  static contextTypes = {
+  router: React.PropTypes.object.isRequired
+  }
+
+    componentDidMount() {
+      window.addEventListener('resize', _.debounce(function(){
+        // this.forceUpdate.call(this, function() {
+
+          $(this.refs.titulo).triggerHandler('update.dot');
+          $(this.refs.subTitulo).triggerHandler('update.dot');
+        // }.bind(this));
+
+    }.bind(this), 150).bind(this));
+    $(this.refs.titulo).dotdotdot();
+    $(this.refs.subTitulo).dotdotdot();
+    }
+  render() {
+    var props=this.props;
   return (
   <div className={`${styles.imagemBanner}`} style={{
     backgroundImage: 'url(' + props.banner + ')'
   }}>
     <div className={styles.backgroundBanner}>
       <div className="container">
-        <div className={styles.informacoesBanner}>
+        <div onClick={this.joinPost.bind(this)} style={{cursor: 'pointer'}} className={styles.informacoesBanner}>
           {/*<div className={styles.corCategoria}>{props.categoria}</div>*/}
           <Categorias opcoes={props.categories}></Categorias>
-          <div className={styles.tituloBanner}>{props.titulo}</div>
-          <div className={styles.subTituloBanner}>{props.subTitulo}</div>
+          <div ref="titulo" className={styles.tituloBanner}>{props.titulo}</div>
+          <div ref="subTitulo"  className={styles.subTituloBanner}>{props.subTitulo}</div>
         <Assinatura cor="white" autor={props.autor} data={props.data} tempo={props.tempo}></Assinatura>
         </div>
 
@@ -172,4 +200,5 @@ function Slide(props) {
     </div>
   </div>
 )
+  }
 }

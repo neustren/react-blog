@@ -1,5 +1,21 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700,900);
 
+@mixin aspect-ratio($width, $height) {
+  & {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-bottom: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
 .base {
   margin-top: 3em;
   margin-left:2em;
@@ -48,13 +64,15 @@ font-size: 16px;
 }
 
 .imagemBlog {
-width: 50%;
-height: 50%;
+
 margin-right: 1em;
 cursor: pointer;
+background-position: center;
+
 }
 
 .imagemDisplay {
+
   display: inline-flex;
 }
 
@@ -69,10 +87,30 @@ only screen and ( min-resolution: 192dpi) and (max-width: 767px),
 only screen and ( min-resolution: 2dppx) and (max-width: 767px),
 only screen and (max-width: 767px) {
   .imagemBlog {
+    @include aspect-ratio(350,200);
       width: 100%;
       margin-bottom:0.5em;
+
   }
   .imagemDisplay {
+
     display: inline-block;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 768px),
+only screen and ( min--moz-device-pixel-ratio: 2) and (min-width: 768px),
+only screen and ( -o-min-device-pixel-ratio: 2/1) and (min-width: 768px),
+only screen and ( min-device-pixel-ratio: 2) and (min-width: 768px),
+only screen and ( min-resolution: 192dpi) and (min-width: 768px),
+only screen and ( min-resolution: 2dppx) and (min-width: 768px),
+only screen and (min-width: 768px) {
+  .imagemBlog {
+    .content {
+      width: 35vw;
+      height: 20vw;
+      max-width: 350px;
+      max-height: 200px;
+    }
   }
 }
