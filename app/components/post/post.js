@@ -39,7 +39,7 @@ class Post extends Component {
 joinPost() {
   console.log(this);
   this.props.postOpened(this.props.data, this.state.imagem);
-      this.context.router.push('/post/'+this.props.data.id);
+      this.context.router.push('/post/'+this.props.data.slug);
 
 }
   render() {

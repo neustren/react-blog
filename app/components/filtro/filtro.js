@@ -17,10 +17,11 @@ import { getPostsByCategory } from '../../actions/postsByCategory';
 class Filtro extends Component {
   componentDidMount() {
   this.props.selectCategory(0);
+  this.props.getPostsByCategory(0);
 }
 
 SendGetPostsByCategory(e) {
-  this.props.selectCategory(e)
+  this.props.selectCategory(e);
 this.props.getPostsByCategory(e);
 }
 

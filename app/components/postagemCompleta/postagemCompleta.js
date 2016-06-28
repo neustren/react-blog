@@ -15,13 +15,22 @@ import LeiaMais from '../../components/leiamais/leiamais';
 class postagemCompleta extends Component {
 
   componentDidMount() {
-    let postagem = this.props.state.postOpened.post;
+    // let postagem = this.props.state.postOpened.post;
 
-    if(!postagem) {
+    // if(!postagem) {
 
-       this.props.getPostOpened(this.props.params);
-    }
+      //  this.props.getPostOpened(this.props.params);
+    // }
+     this.props.getPostOpened(this.props.params);
     // this.setState({ servicos: this.props.lavanderia.Services});
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
+    if(this.props.params!==nextProps.params) {
+      this.props.getPostOpened(this.props.params);
+    }
+    // this.props.getPostOpened(this.props.params);
   }
 
 renderPostagem() {
@@ -31,7 +40,7 @@ renderPostagem() {
 
 if(post) {
 
-
+console.log(post);
 
 
 const banner = require('../../img/banner.png');
@@ -49,8 +58,9 @@ const lkBrancoIcon = require('../../img/lkBrancoIcon.png');
 const entrenaconversamobile = require('../../img/entrenaconversamobile.png');
 const entrenaconversadesktop = require('../../img/entrenaconversadesktop.png');
 
-
+try {
   var dataFinal = post.date.slice(8,10) + '/' + post.date.slice(5,7) + '/' + post.date.slice(0,4);
+
   var minutosPraLer = post.minutos_para_ler ? post.minutos_para_ler[0] : '';
 
   var categoria = post.categories[0];
@@ -60,7 +70,11 @@ var titulo = post.title.rendered;
    var data = dataFinal;
    var tempo = minutosPraLer;
    var texto=post.content.rendered;
-   var imagem = this.props.state.postOpened.imagem ? this.props.state.postOpened.imagem : banner;
+   var imagem = post.banner;
+}
+   catch(e) {
+     return (<div></div>)
+   }
 
 
   return (

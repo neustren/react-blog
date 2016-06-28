@@ -18,14 +18,15 @@ export function postOpened(data,imagem) {
 export function getPostOpened(CATEGORY) {
     return function(dispatch) {
 
-            client.get(`${ROOT_URL}/wp-json/wp/v2/posts/${CATEGORY}`)
+            client.get(`${ROOT_URL}/wp-json/wp/v2/posts?filter[name]=${CATEGORY}`)
                 .end(function(err, data) {
 
-                    let dataF = JSON.parse(data.text);
+                    let dataE = JSON.parse(data.text);
+                    let dataF=dataE[0];
                     let imagem = dataF.featured_media;
                     var res;
 
-                    if (imagem) {
+                    if (false) {
                         client.get(`${ROOT_URL}/wp-json/wp/v2/media/${imagem}`)
                             .end(function(err, data) {
                                 res = JSON.parse(data.text);

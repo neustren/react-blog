@@ -18,50 +18,34 @@ class Categorias extends Component {
   // }
 
   renderCategory(post) {
-
+    console.log(this.props);
     var categoriaDoPost = this.props.opcoes;
-    var categories = this.props.state.categories.categories;
-    var l = categories.length;
-                  var i = 0;
+    var categories = {4: {"name":"Atualidades","slug":"atualidades","id":4},3 : {"name":"Capitalização","slug":"capitalizacao","id":3}, 9: {"name":"Destaque","slug":"destaque","id":9}, 2: {"name":"Finanças","slug":"financas","id":2}, 1: {"name":"Invisível","slug":"invisivel","id":1}, 5: {"name":"Meio Ambiente","slug":"meio_ambiente","id":5}};
+    var l = categoriaDoPost.length;
+                  var n = 0;
     if(categoriaDoPost) {
 
 
-          for(i; i<l; i++) {
+          for(; n<l; n++) {
+            var i=categoriaDoPost[n];
+              if ((i!==9) && (i!==1) && categories[i]) {
+                var i=categoriaDoPost[n];
+
             var id = categories[i].id;
 
+            //console.log('cat' + categoriaDoPost);
 
-            if (id == categoriaDoPost) {
               var slug = categories[i].slug;
             var name = categories[i].name;
                             console.log(slug);
-              switch (slug) {
 
-                case 'capitalizacao':
-                return (
-                      <div key={id} className={styles.capitalizacao}>{name}</div>
-                )
-                  break;
-                case 'atualidades':
-                return (
-                <div key={id} className={styles.atualidades}>{name}</div>
-                )
-                  break;
-                case 'meio_ambiente':
-                                return (
-                      <div key={id} className={styles.meio_ambiente}>{name}</div>
-                      )
-                  break;
-                case 'financas':
-                                return (
-                      <div key={id} className={styles.financas}>{name}</div>
-                      )
-                  break;
-                default:
 
-              }
+                    return  <div key={id} className={styles[slug]}>{name}</div>
+
 
             };
           }
+          return <div/>
 
     }
 
