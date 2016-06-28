@@ -48,7 +48,7 @@ changePage(a) {
   let query = this.props.state.search.search.query;
   let qntResult = this.props.state.search.search.total;
   let next = paginaAtual + a;
-  let qntPaginas = Math.ceil(qntResult/2);
+  let qntPaginas = Math.ceil(qntResult/6);
   if(next == 0 || next > qntPaginas ) {
     return;
   }
@@ -82,7 +82,7 @@ console.log(paginaAtual);
 let qntResult = this.props.state.search.search.total;
 var paginacaoEsquerda = require('../../img/paginacaoEsquerda.png');
 var paginacaoDireita = require('../../img/paginacaoDireita.png');
-let qntPaginas = Math.ceil(qntResult/2);
+let qntPaginas = Math.ceil(qntResult/6);
 let paginaAtual = this.props.state.search.search.page;
 let query = this.props.state.search.search.query;
 
@@ -91,14 +91,16 @@ return (
     <div className={styles.boxResults}>
       <span className={styles.qntResultadosEncontrados}>{qntResult}</span> <span className={styles.resultadosEncontrados}>RESULTADOS ENCONTRADOS</span>
     </div>
-    <div style={{    display: 'inline-block'}}>
+    <div className="row">
     {this.renderPosts()}
 </div>
+  <div className="row">
     <div className={styles.paginacao}>
       <img onClick={(e) => {this.changePage(-1)}} height="20" width="14" src={paginacaoEsquerda}></img>
       <div>Pagina <span className={styles.qntResultadosEncontrados}>{paginaAtual || 0}</span> de {qntPaginas || 0}</div>
       <img onClick={(e) => {this.changePage(1)}} height="20" width="14" src={paginacaoDireita}></img>
     </div>
+  </div>
   </div>
 )
 }

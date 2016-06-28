@@ -6,6 +6,7 @@ import { routeReducer } from 'react-router-redux';
 import tags from './tags';
 import categories from './categories';
 import search from './search';
+import modal from './modal';
 
 var reducers =  {
     selectedCategory:selectedCategory,
@@ -13,7 +14,8 @@ var reducers =  {
     postOpened: postOpened,
     tags: tags,
     categories: categories,
-    search: search
+    search: search,
+    modal: modal
 };
 
 export default reducers;

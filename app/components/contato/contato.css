@@ -1,0 +1,107 @@
+
+.modalBody {
+  background: #005aa1;
+  color: white;
+}
+
+.fecharModal {
+  float: right;
+  cursor: pointer;
+}
+
+
+.bodyInside {
+  padding-top: 1.5em;
+  padding-left: 1em;
+  padding-right:1em;
+  padding-bottom:0.5em;
+}
+
+
+/*
+font-family: 'Montserrat';
+ font-family: 'Roboto', sans-serif;
+*/
+.inputModal {
+  font-size: 12px;
+  color: #999999;
+ font-family: 'Roboto', sans-serif;
+ font-weight: 300;
+
+}
+
+.titulo {
+  font-size:37px;
+  display: inline-block;
+  margin-top:0.1em;
+  color: white;
+  padding-bottom:0.4em;
+  border-bottom: 1px solid #fff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+   text-align: center;
+}
+
+.brasilcap {
+  color: #ffef00;
+}
+
+.content {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 19px;
+   text-align: center;
+  color: #fff;
+  margin-top: 17px;
+}
+
+.negrito {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+}
+
+.botaoEnviar {
+  display: inline-block;
+
+  width: 90%;
+  margin-top:2.5em;
+  text-transform: capitalize;
+  font-family: 'Montserrat';
+  font-weight: 700;
+  color:#005aa1;
+  font-size:15px;
+  letter-spacing: 1px;
+  background: #ffef00;
+  border-bottom: 4px solid #dbce00;
+  padding-top:0.4em;
+  padding-bottom:0.5em;
+  border-radius:2px;
+  cursor: pointer;
+}
+
+.botaoEnviar:hover {
+  background-color: #dbce00;
+    border-bottom: 2px solid #ffef00;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 991px),
+only screen and ( min--moz-device-pixel-ratio: 2) and (max-width: 991px),
+only screen and ( -o-min-device-pixel-ratio: 2/1) and (max-width: 991px),
+only screen and ( min-device-pixel-ratio: 2) and (max-width: 991px),
+only screen and ( min-resolution: 192dpi) and (max-width: 991px),
+only screen and ( min-resolution: 2dppx) and (max-width: 991px),
+only screen and (max-width: 991px) {
+.botaoEnviar {
+
+margin-top:1.5em;
+}
+
+.titulo {
+  font-size:32px;
+}
+.content {
+  font-size: 15px;
+
+}
+
+}
