@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 
+import { ROOT_URL } from '../../actions/index';
+
+import $ from 'jquery';
+
 import styles from './contato.css';
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
@@ -25,9 +29,28 @@ class Contato extends Component {
     close() {
     this.props.showModal(false);
   }
+constructor() {
+  super();
+  this.state={sent: false}
+}
+
+enviar() {
+  var fd = new FormData(this.refs.gatlingKing);
+  $.ajax({
+  url: ROOT_URL+'/wp-content/plugins/bcap/addlead.php',
+  type: "POST",
+  data: fd,
+  processData: false,  // tell jQuery not to process the data
+  contentType: false,
+  success: function() {
+    this.setState({sent:true});
+  }.bind(this)   // tell jQuery not to set contentType
+});
+}
 
   open() {
   this.props.showModal(true);
+  this.setState({sent:false});
   }
   render() {
     // const logo = require('../../img/Logo.png');
@@ -49,25 +72,26 @@ return (
            <div className={styles.bodyInside}>
            <div className="row">
            <div className="col-sm-6">
-           <form>
+           {this.state.sent ? "Mensagem enviada!" : <form ref="gatlingKing">
         <div className="form-group">
-          <input className={`form-control ${styles.inputModal}`} placeholder="Seu nome"></input>
+          <input name="type" type="hidden" value="novolead"></input>
+          <input name="name" className={`form-control ${styles.inputModal}`} placeholder="Seu nome"></input>
         </div>
         <div className="form-group">
-          <input className={`form-control ${styles.inputModal}`} placeholder="Seu endereço de e-mail"></input>
+          <input name="email" className={`form-control ${styles.inputModal}`} placeholder="Seu endereço de e-mail"></input>
         </div>
         <div className="form-group">
-          <input className={`form-control ${styles.inputModal}`} placeholder="Assunto"></input>
+          <input name="subject" className={`form-control ${styles.inputModal}`} placeholder="Assunto"></input>
           </div>
           <div className="form-group">
-          <textarea rows="6" className={`form-control ${styles.inputModal}`} placeholder="Mensagem"></textarea>
+          <textarea name="message" rows="6" className={`form-control ${styles.inputModal}`} placeholder="Mensagem"></textarea>
           </div>
-      </form>
+      </form>}
     </div>
     <div className="col-sm-6" style={{textAlign: 'center'}}>
       <div className={styles.titulo}>Fale com a <span className={styles.brasilcap}>Brasilcap</span></div>
       <div className={styles.content}>Tire suas dúvidas, faça suas sugestões e observações <span className={styles.negrito}>nos campos ao lado</span> que lhe retornaremos.</div>
-      <div className={styles.botaoEnviar}>Enviar</div>
+      <div onClick={this.enviar.bind(this)} className={styles.botaoEnviar}>Enviar</div>
     </div>
   </div>
 </div>

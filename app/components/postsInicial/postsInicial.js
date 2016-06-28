@@ -9,6 +9,10 @@ import Post from '../post/post';
 
 class PostsInicial extends Component {
 
+constructor() {
+  super();
+  this.state={page: 0};
+};
 //   componentDidMount() {
 //   let category = this.props.state.category.selected;
 //   // if(!category) {
@@ -41,6 +45,7 @@ renderPosts() {
 }
 
   render() {
+    console.log(this.props.state.postsByCategory.hasMore);
     const leao = require('../../img/leao.png');
     const vejamaisbotao = require('../../img/vejamaisbotao.png');
 return (
@@ -48,7 +53,7 @@ return (
   <div className={styles.corpo}>
   <div className="container">
     {this.renderPosts()}
-    <img className={styles.vejamais} src={vejamaisbotao}></img>
+    <img onClick={this.props.getPostsByCategory.bind(null, this.props.state.selectedCategory.selected, this.props.state.postsByCategory.page+1)} className={styles.vejamais} src={vejamaisbotao} style={{ display: !this.props.state.postsByCategory.hasMore ? 'none' : ''}}></img>
   </div>
 </div>
 )

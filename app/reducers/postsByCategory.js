@@ -5,14 +5,17 @@ import {
 } from '../actions/postsByCategory';
 
 var initialState = {
-  posts:[]
+  posts:[],
+  page: 0,
+  hasMore: true
 };
 
 export default function postsByCategory (state = initialState, action) {
   switch (action.type) {
     case POSTS_BY_CATEGORY:
 
-      return { ...state, posts:action.data };
+      return { ...state, posts:action.data, page: action.page, hasMore: action.hasMore };
+
       default:
         return state;
       }
