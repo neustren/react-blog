@@ -67,7 +67,7 @@ let paginaAtual = this.props.state.search.search.page;
 console.log(paginaAtual);
       return postagens.map((post) => {
         return (
-          <div key={post.id} className={` ${styles.eachBox} col-sm-6`}>
+          <div key={post.id} className={` ${styles.eachBox} col-sm-12`}>
         <Post noimage={true} data={post}></Post>
       </div>
 

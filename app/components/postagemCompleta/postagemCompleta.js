@@ -96,9 +96,9 @@ var titulo = post.title.rendered;
           <Categorias opcoes={categoria}></Categorias>
             <div className={styles.tituloBanner}>{titulo}</div>
             <Assinatura cor="white" autor={autor} data={data} tempo={tempo}></Assinatura>
-            <img className={styles.iconeDestaque} src={Facebook}></img>
-            <img className={styles.iconeDestaque} src={Twitter}></img>
-            <img className={styles.iconeDestaque} src={Linkedin}></img>
+            <img style={{cursor: 'pointer'}} onClick={() => window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location))} className={styles.iconeDestaque} src={Facebook}></img>
+            <img style={{cursor: 'pointer'}} onClick={() => window.open('https://twitter.com/home?status='+encodeURIComponent(window.location))} className={styles.iconeDestaque} src={Twitter}></img>
+            <img style={{cursor: 'pointer'}} onClick={() => window.open('https://www.linkedin.com/shareArticle?mini=true&url='+encodeURIComponent(window.location)+'&title='+encodeURIComponent(titulo))} className={styles.iconeDestaque} src={Linkedin}></img>
           </div>
 
         </div>
