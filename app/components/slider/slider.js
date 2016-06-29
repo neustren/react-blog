@@ -35,6 +35,7 @@ export default class Slider extends Component {
   componentDidMount() {
     //this.refs.slider.addEventListener("mousemove",(e) => { } )
     window.addEventListener('resize', function(){
+      if(!this.refs.slider) return;
     this.refs.slider.scrollLeft=window.innerWidth*this.state.selected;
   }.bind(this));
 

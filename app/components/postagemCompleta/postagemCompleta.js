@@ -11,6 +11,7 @@ import { getPostOpened } from '../../actions/postOpened';
 import Tags from '../../components/Tags/Tags';
 import Categorias from '../categorias/categorias';
 import LeiaMais from '../../components/leiamais/leiamais';
+import comment from '../../img/comment.png';
 
 class postagemCompleta extends Component {
 
@@ -27,10 +28,18 @@ class postagemCompleta extends Component {
 
   componentWillReceiveProps(nextProps) {
     console.log(nextProps);
-    if(this.props.params!==nextProps.params) {
+    if((this.props.params!==nextProps.params) || (!this.props.state.postOpened.post || !this.props.state.postOpened.post.slug))
+     {
       this.props.getPostOpened(this.props.params);
     }
     // this.props.getPostOpened(this.props.params);
+  }
+
+  componentDidUpdate() {
+    if(this.props.state.postOpened.post.slug && (this.props.state.postOpened.post.slug !== this.props.params))
+    {
+      this.props.getPostOpened(this.props.params);
+    }
   }
 
 renderPostagem() {
@@ -97,7 +106,7 @@ var titulo = post.title.rendered;
     </div>
     <div className={styles.corpo}>
 
-      <div className="container">
+      <div style={{marginBottom: "2.4em"}} className="container">
         <div className={`${styles.barraLateralShare} hidden-xs`}>
           <img onClick={() => window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location))} className={styles.shareCollumn} src={fbCinzaIcon}></img>
           <img onClick={() => window.open('https://twitter.com/home?status='+encodeURIComponent(window.location))} className={styles.shareCollumn} src={twCinzaIcon}></img>
@@ -121,10 +130,11 @@ var titulo = post.title.rendered;
               <img className={styles.shareRow} src={lkBrancoIcon}></img>
             </div>
           </div>
-          <Tags opcoes={[7,8,6]}></Tags>
+          <Tags opcoes={post.tags}></Tags>
 
-          <img src={entrenaconversamobile} className={`${styles.entrenaconversamobile} hidden-sm hidden-lg hidden-md hidden-xl`}></img>
-          <img src={entrenaconversadesktop} className={`${styles.entrenaconversadesktop} hidden-xs`}></img>
+            <div className={`${styles.btnBlue} ${styles.entrenaconversamobile}`}><img width="15" height="15" src={comment}/><span>&nbsp;&nbsp;ENTRE NA CONVERSA</span></div>
+          {/*<img src={entrenaconversamobile} className={`${styles.entrenaconversamobile} hidden-sm hidden-lg hidden-md hidden-xl`}></img>
+          <img src={entrenaconversadesktop} className={`${styles.entrenaconversadesktop} hidden-xs`}></img>*/}
         </div>
       </div>
       </div>

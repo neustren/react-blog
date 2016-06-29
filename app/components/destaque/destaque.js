@@ -47,6 +47,7 @@ export default class Destaque extends Component {
 
   componentDidMount() {
     window.addEventListener('resize', function(){
+      if(!this.refs.slider) return;
     this.refs.slider.scrollLeft=window.innerWidth*this.state.selected;
     }.bind(this));
     $.ajax({
@@ -72,7 +73,7 @@ export default class Destaque extends Component {
     });
   }
   render() {
-console.log(styles.Slider);
+
 return (
   <div className={styles.sliderWrapper}>
     <div className={styles.controleSlider}>
@@ -86,7 +87,7 @@ return (
     </div>
     </div>
     <div ref="slider"
-      onMouseDown={(e) => {console.log(e); e.persist(); this.startScroll=this.refs.slider.scrollLeft;  this.dragging=e.pageX||(e.pageX+1);}}
+      onMouseDown={(e) => { e.persist(); this.startScroll=this.refs.slider.scrollLeft;  this.dragging=e.pageX||(e.pageX+1);}}
         onMouseUp={(e) => {e.persist(); var dragging=this.dragging; this.dragging=false; if(e.pageX-dragging>200) {this.moveTo.call(this,this.state.selected-1);return;} else if(e.pageX-dragging<-200) {this.moveTo.call(this, this.state.selected+1); return;} this.moveTo.call(this,this.state.selected)}}
         onMouseMove={(e) => {e.persist(); if(!this.dragging) return;  this.refs.slider.scrollLeft=this.startScroll-(e.pageX-this.dragging);}}
         onMouseLeave={(e) => {if(this.dragging) {this.moveTo.call(this, this.state.selected); this.dragging=false}}}

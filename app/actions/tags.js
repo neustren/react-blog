@@ -17,7 +17,7 @@ export function tags(data) {
 export function getTags() {
   return function(dispatch) {
 
-    return client.get(`${ROOT_URL}/wp-json/wp/v2/tags`)
+    return client.get(`${ROOT_URL}/wp-json/wp/v2/tags?per_page=100`)
     .end(function(err,data) {
 
       let resTags = JSON.parse(data.text);

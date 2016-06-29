@@ -15,6 +15,7 @@ class Tags extends Component {
     var tags = this.props.state.tags.tags;
     var l = tags.length;
                   var i = 0;
+                  console.log(tagsDoPost);
     if(tagsDoPost) {
         return tagsDoPost.map((unique) => {
           for(i; i<l; i++) {
@@ -40,12 +41,12 @@ class Tags extends Component {
     const Foto = require('../../img/Foto.png');
     const leao = require('../../img/leao.png');
 
-return (
-  <div>
+return (this.props.opcoes && this.props.opcoes.length) ? (
+   <div>
     <div className={styles.tagsTitulo}>TAGS</div>
     {this.renderTags()}
   </div>
-)
+) : (<div/>)
 }
 }
 
