@@ -10,7 +10,7 @@ import { bindActionCreators } from 'redux';
 import { getPostOpened } from '../../actions/postOpened';
 import Tags from '../../components/Tags/Tags';
 import Categorias from '../categorias/categorias';
-import LeiaMais from '../../components/leiamais/leiamais';
+import LeiaMais from '../../components/vejaMais/leiaMais';
 import comment from '../../img/comment.png';
 // import FacebookProvider, { Comments } from 'react-facebook';
 var ReactDisqusThread = require('react-disqus-thread');
@@ -41,6 +41,7 @@ class postagemCompleta extends Component {
   componentDidUpdate() {
     if(this.props.state.postOpened.post.slug && (this.props.state.postOpened.post.slug !== this.props.params))
     {
+      console.log('SCREEEAM');
       this.props.getPostOpened(this.props.params);
     }
   }
@@ -76,7 +77,7 @@ try {
   var minutosPraLer = post.minutos_para_ler ? post.minutos_para_ler[0] : '';
 
   var categorias = post.categories.filter(function(x) {return (x!==9) && (x!==1)});
-  var categoria = categorias.length ? categorias[0] : 0;
+  var categoria = categorias.length ? categorias[0] : 1;
 var titulo = post.title.rendered;
    var subTitulo = post.Subtitulo[0];
    var autor = "Brasilcap";
