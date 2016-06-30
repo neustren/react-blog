@@ -14,7 +14,7 @@ export default function postsByCategory (state = initialState, action) {
   switch (action.type) {
     case POSTS_BY_CATEGORY:
 
-      return { ...state, posts:action.data, page: action.page, hasMore: action.hasMore };
+      return { ...state, posts:action.data, page: action.page, hasMore: action.hasMore, category: action.category };
 
       default:
         return state;

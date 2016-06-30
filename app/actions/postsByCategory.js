@@ -4,14 +4,15 @@ import { ROOT_URL } from './index';
 export const POSTS_BY_CATEGORY = 'POSTS_BY_CATEGORY';
 export const INCREASE_PAGE = 'waw/INCREASE_PAGE';
 
-export function postsByCategory(data, page, hasMore) {
+export function postsByCategory(data, page, hasMore, category) {
   // const request = client.get(`${ROOT_URL}/wp-json/wp/v2/posts?categories=${CATEGORY}`);
 
     return {
       type: POSTS_BY_CATEGORY,
       data,
       page,
-      hasMore
+      hasMore,
+      category
     };
 }
 
@@ -28,7 +29,7 @@ export function getPostsByCategory(CATEGORY, PAGE) {
       var hasMore=data.headers["x-wp-totalpages"]!=="1";
       console.log(hasMore);
 
-    dispatch(postsByCategory(enderecos, PAGE, hasMore));
+    dispatch(postsByCategory(enderecos, PAGE, hasMore, CATEGORY));
     })
   }
 }

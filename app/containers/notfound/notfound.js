@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import Header from '../../components/header/header';
 import Footer from '../../components/footer/footer';
-import styles from './interna.less';
+import styles from './notfound.less';
 import {Link} from 'react-router';
     import Assinatura from '../../components/assinatura/assinatura';
 
@@ -11,15 +11,12 @@ import Historias from '../../components/historias/historias';
 
 import PostagemCompleta from '../../components/postagemCompleta/postagemCompleta';
 
-export default class Interna extends Component {
+export default class NotFound extends Component {
   static contextTypes = {
   router: React.PropTypes.object.isRequired
   }
   componentDidMount() {
-    let parm = this.props.params.id;
-    if(!parm) {
-            this.context.router.push('/');
-    }
+
 
     // this.setState({ servicos: this.props.lavanderia.Services});
   }
@@ -52,7 +49,15 @@ return (
   {/*<Header></Header>*/}
 
 
-  <PostagemCompleta params={this.props.params.id}></PostagemCompleta>
+  <div className={styles.harbinger}>
+    <div className={styles.ops}>
+      Oops!
+    </div>
+    <div className={styles.sub}>
+      A página que você procura<br/>
+    não pôde ser encontrada.
+    </div>
+  </div>
     <div className={styles.corpo}>
 
 
