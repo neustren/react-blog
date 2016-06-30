@@ -15,7 +15,7 @@ import comment from '../../img/comment.png';
 // import FacebookProvider, { Comments } from 'react-facebook';
 var ReactDisqusThread = require('react-disqus-thread');
 import Historias from '../../components/historias/historias';
-import { SITE_URL } from './index';
+import { SITE_URL } from '../../actions/index';
 
 class postagemCompleta extends Component {
 
