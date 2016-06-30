@@ -8,7 +8,9 @@ import { getPostsByCategory } from '../../actions/postsByCategory';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 class Historias extends Component {
-
+  static contextTypes = {
+  router: React.PropTypes.object.isRequired
+};
   componentDidMount() {
 
   }
@@ -18,6 +20,7 @@ class Historias extends Component {
 
   joinPost(a) {
     if(a) {
+
 
         this.context.router.push('/post/'+a);
       }
