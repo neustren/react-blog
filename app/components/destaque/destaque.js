@@ -105,6 +105,15 @@ return (
 }
 
 class DesSlide extends Component {
+  joinPost() {
+
+        this.context.router.push('/post/'+this.props.slug);
+
+  }
+
+  static contextTypes = {
+  router: React.PropTypes.object.isRequired
+  }
   render() {
     var props=this.props;
     return (<div style={{backgroundImage: 'url(' + props.banner + ')'}} className={styles.backgroundOpaco}>
@@ -117,7 +126,7 @@ class DesSlide extends Component {
           <Categoria opcoes={props.categories}></Categoria>
         </div>
       </div>
-      <div className={styles.descricaoDestaque}>
+      <div onClick={this.joinPost.bind(this)} style={{cursor: 'pointer'}} className={styles.descricaoDestaque}>
       <div className={styles.tituloDestaque}>{props.titulo}</div>
         <div className={styles.descricaoBanner} >
           <div className={styles.preNomeAutorBanner}>por</div>

@@ -10,15 +10,38 @@ import { bindActionCreators } from 'redux';
 class LeiaMais extends Component {
 
   componentDidMount() {
-    let catsPosts = this.props.state.postsByCategory.posts;
-    var catsPostsl = catsPosts.length;
-    console.log(catsPostsl);
-    if(catsPostsl == 0) {
-console.log("disparou");
-       this.props.getPostsByCategory(this.props.categoria);
+//     let catsPosts = this.props.state.postsByCategory.posts;
+//     var catsPostsl = catsPosts.length;
+//     console.log(catsPostsl);
+//     if(catsPostsl === 0) {
+// console.log("disparou");
+
+if(this.props.categoria && (this.props.state.postsByCategory.categoria!==this.props.categoria)) {
+   this.props.getPostsByCategory(this.props.categoria);
+ }
+    // this.setState({ servicos: this.props.lavanderia.Services});
+  }//
+
+  componentWillReceiveProps(nextProps) {
+    if((this.props.categoria!==nextProps.categoria) && nextProps.categoria && (this.props.state.postsByCategory.categoria!==nextProps.categoria)) {
+       this.props.getPostsByCategory(nextProps.categoria);
+asd
     }
+  }
+
+  componentDidUpdate() {
+    // let catsPosts = this.props.state.postsByCategory.posts;
+    // var catsPostsl = catsPosts.length;
+    // console.log(catsPostsl);
+    // if(catsPostsl == 0) {
+// console.log("disparou");
+    if(this.props.categoria && (this.props.state.postsByCategory.categoria!==this.props.categoria)) {
+       this.props.getPostsByCategory(this.props.categoria);
+     }
+    // }
     // this.setState({ servicos: this.props.lavanderia.Services});
   }
+
   renderPostsLM() {
     var categoria = this.props.categoria;
     var post = this.props.post;

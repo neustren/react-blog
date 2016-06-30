@@ -75,7 +75,8 @@ try {
 
   var minutosPraLer = post.minutos_para_ler ? post.minutos_para_ler[0] : '';
 
-  var categoria = post.categories[0];
+  var categorias = post.categories.filter(function(x) {return (x!==9) && (x!==1)});
+  var categoria = categorias.length ? categorias[0] : 0;
 var titulo = post.title.rendered;
    var subTitulo = post.Subtitulo[0];
    var autor = "Brasilcap";

@@ -19,7 +19,7 @@ const sliderSetaDireitaBranca = require('../../img/sliderSetaDireitaBranca.png')
 const sliderSetaDireitaCinza = require('../../img/sliderSetaDireitaCinza.png');
 
 
-var placeholder=[{banner: banner, categoria: "Finanças", titulo: "Inadimplência: perspectivas continuam negativas para 2016", subTitulo: "Desemprego e a falta de educação são os dois maiores motivos, segundo pesquisa.", autor: "Isabella Abreu", data: "22/02/2015", tempo: "5 min"}, {banner: "http://cdn-w.pornstarblognetwork.com/clubfayereagan.com/public_html/wp-content/uploads/2010/08/0738.jpg", categoria: "Finanças", titulo: "Inadimplência: perspectivas continuam negativas para 2016", subTitulo: "Desemprego e a falta de educação são os dois maiores motivos, segundo pesquisa.", autor: "Isabella Abreu", data: "22/02/2015", tempo: "5 min"}];
+var placeholder=[];
 
 
 
