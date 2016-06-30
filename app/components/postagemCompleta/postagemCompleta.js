@@ -12,6 +12,9 @@ import Tags from '../../components/Tags/Tags';
 import Categorias from '../categorias/categorias';
 import LeiaMais from '../../components/leiamais/leiamais';
 import comment from '../../img/comment.png';
+// import FacebookProvider, { Comments } from 'react-facebook';
+var ReactDisqusThread = require('react-disqus-thread');
+import Historias from '../../components/historias/historias';
 
 class postagemCompleta extends Component {
 
@@ -132,14 +135,28 @@ var titulo = post.title.rendered;
           </div>
           <Tags opcoes={post.tags}></Tags>
 
-            <div className={`${styles.btnBlue} ${styles.entrenaconversamobile}`}><img width="15" height="15" src={comment}/><span>&nbsp;&nbsp;ENTRE NA CONVERSA</span></div>
+    <div className={`${styles.btnBlue} ${styles.entrenaconversamobile}`}><img width="15" height="15" src={comment}/><span>&nbsp;&nbsp;ENTRE NA CONVERSA</span></div>
+            <div className={styles.fbcomments}>
+
+
+            {/*<FacebookProvider appID="1574885309478862">
+              <Comments width="100%" href={'http://www.facebook.com/'+post.slug} />
+            </FacebookProvider>*/}
+
+            <ReactDisqusThread
+                            shortname="zeroperrengue"
+                            identifier={post.slug}
+                            title={post.slug}
+                            url="http://localhost:3100"
+/>
+            </div>
           {/*<img src={entrenaconversamobile} className={`${styles.entrenaconversamobile} hidden-sm hidden-lg hidden-md hidden-xl`}></img>
           <img src={entrenaconversadesktop} className={`${styles.entrenaconversadesktop} hidden-xs`}></img>*/}
         </div>
       </div>
       </div>
 
-
+          <Historias next={post.next} previous={post.previous}/>
           <LeiaMais categoria={categoria} post={post.id}></LeiaMais>
     </div>
   </div>

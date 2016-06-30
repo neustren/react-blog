@@ -6,9 +6,10 @@
   top: 60%;
 }
 
-
+.fbcomments {
+  margin-top: 2em;
+}
 .btnBlue {
-  cursor: pointer;
   background: #005aa1;
     /* border-bottom-color: #004d89; */
     border-bottom: solid 4px #004d89;

@@ -23,7 +23,7 @@ console.log("disparou");
     var categoria = this.props.categoria;
     var post = this.props.post;
     var catsPostsA = this.props.state.postsByCategory.posts;
-
+    console.log(catsPostsA);
     if(catsPostsA) {
       var count = 0;
       return catsPostsA.map((pt) => {
