@@ -15,6 +15,7 @@ import comment from '../../img/comment.png';
 // import FacebookProvider, { Comments } from 'react-facebook';
 var ReactDisqusThread = require('react-disqus-thread');
 import Historias from '../../components/historias/historias';
+import { SITE_URL } from '../../actions/index';
 
 class postagemCompleta extends Component {
 
@@ -149,7 +150,7 @@ var titulo = post.title.rendered;
                             shortname="zeroperrengue"
                             identifier={post.slug}
                             title={post.slug}
-                            url="http://localhost:3100"
+                            url={SITE_URL}
 />
             </div>
           {/*<img src={entrenaconversamobile} className={`${styles.entrenaconversamobile} hidden-sm hidden-lg hidden-md hidden-xl`}></img>
