@@ -4,7 +4,7 @@ import { ROOT_URL } from '../../actions/index';
 
 import $ from 'jquery';
 
-import styles from './destaque.less';
+import styles from './destaque.scss';
 import {Link} from 'react-router';
 import Categoria from '../categorias/categorias';
 
@@ -30,15 +30,17 @@ export default class Destaque extends Component {
   }
 
   moveTo(n) {
-    if(this.halt||(n>this.state.placeholder.length-1)||(n<0)) return;
+    if(this.halt||(n>this.state.placeholder.length-1)||(n<0)||!this.refs.slider) return;
     this.refs.slider.style.pointerEvents='none';
     $(this.refs.slider).animate({
     scrollLeft:window.innerWidth*n
   }, 700);
     setTimeout(function() {
       this.halt=false;
-      this.refs.slider.style.pointerEvents='';
       this.setState({selected: n});
+      if(!this.refs.slider) return;
+      this.refs.slider.style.pointerEvents='';
+
     }.bind(this), 700);
     //this.startScroll=
   }
@@ -71,6 +73,15 @@ export default class Destaque extends Component {
         })});
       }.bind(this)
     });
+    setInterval(function(){
+      if(this.state.selected>=this.state.placeholder.length-1){
+        this.megazord=1;
+      }
+      if(this.state.selected<=0){
+        this.megazord=0;
+      }
+      this.moveTo(this.megazord ? this.state.selected-1 : this.state.selected+1);
+    }.bind(this), 7000);
   }
   render() {
 
@@ -115,12 +126,14 @@ class DesSlide extends Component {
   router: React.PropTypes.object.isRequired
   }
   render() {
+    var mull=null;
     var props=this.props;
     return (<div style={{backgroundImage: 'url(' + props.banner + ')'}} className={styles.backgroundOpaco}>
       <div className={styles.opacidadeAqui}>
 
       <div className={styles.caixaImagem}>
-        <img src={props.imagem} className={styles.imagemDestaque}></img>
+        {/*<img src={props.imagem} className={styles.imagemDestaque}></img>*/}
+        <div className={styles.imagemBlog}><div className={styles.content} style={{backgroundImage: `url('${props.imagem||mull}')`, backgroundSize: 'cover'}}></div></div>
         <div className={styles.tagFlutuante}>
           {/*<img src={props.preview_image} className={styles.imagemFlutuante}></img>*/}
           <Categoria opcoes={props.categories}></Categoria>
@@ -129,8 +142,8 @@ class DesSlide extends Component {
       <div onClick={this.joinPost.bind(this)} style={{cursor: 'pointer'}} className={styles.descricaoDestaque}>
       <div className={styles.tituloDestaque}>{props.titulo}</div>
         <div className={styles.descricaoBanner} >
-          <div className={styles.preNomeAutorBanner}>por</div>
-          <div className={styles.nomeAutorBanner} >{props.autor}</div>
+          {/*<div className={styles.preNomeAutorBanner}>por</div>
+          <div className={styles.nomeAutorBanner} >{props.autor}</div>*/}
             <img className={styles.iconeDescricaoBanner} src={dataIcone}></img>
             <div className={styles.dataBanner}>{props.data}</div>
           </div>

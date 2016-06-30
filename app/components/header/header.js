@@ -14,7 +14,8 @@ import { showModal } from '../../actions/modal';
 
 class Header extends Component {
   static contextTypes = {
-  router: React.PropTypes.object.isRequired
+  router: React.PropTypes.object.isRequired,
+  location: React.PropTypes.object
 };
 
   constructor(props) {
@@ -30,6 +31,13 @@ class Header extends Component {
      this.props.getCategories();
     // this.setState({ servicos: this.props.lavanderia.Services});
   }
+
+  componentDidUpdate() {
+    if((this.context.location.pathname.indexOf('/busca')===-1) && this.props.state.search.searchOn) {
+      this.props.searchOn(false);
+    }
+  }
+
   close() {
   this.props.showModal(false);
 }

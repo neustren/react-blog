@@ -99,7 +99,7 @@ var titulo = post.title.rendered;
       <div className={styles.backgroundBanner}>
         <div className="container">
           <div className={`${styles.informacoesBanner} col-sm-offset-2 col-sm-8 col-xs-12`}>
-          <Categorias opcoes={categoria}></Categorias>
+          <Categorias opcoes={categorias}></Categorias>
             <div className={styles.tituloBanner}>{titulo}</div>
             <Assinatura cor="white" autor={autor} data={data} tempo={tempo}></Assinatura>
             <img style={{cursor: 'pointer'}} onClick={() => window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location))} className={styles.iconeDestaque} src={Facebook}></img>
@@ -147,10 +147,12 @@ var titulo = post.title.rendered;
             </FacebookProvider>*/}
 
             <ReactDisqusThread
-                            shortname="zeroperrengue"
+
+                            shortname={post.slug}
                             identifier={post.slug}
-                            title={post.slug}
-                            url={SITE_URL}
+                            title={post.title.rendered}
+                            url={window.location.href}
+                            category_id={""+categoria}
 />
             </div>
           {/*<img src={entrenaconversamobile} className={`${styles.entrenaconversamobile} hidden-sm hidden-lg hidden-md hidden-xl`}></img>

@@ -11,7 +11,7 @@
   max-height: 330px;
   position: relative;
   -webkit-transform: translateZ(0);
-  cursor:ew-resize;
+  cursor:move;
 }
 
 .Slider {

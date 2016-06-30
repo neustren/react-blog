@@ -59,6 +59,15 @@ export default class Slider extends Component {
         })});
       }.bind(this)
     });
+    setInterval(function(){
+      if(this.state.selected>=this.state.placeholder.length-1){
+        this.megazord=1;
+      }
+      if(this.state.selected<=0){
+        this.megazord=0;
+      }
+      this.moveTo(this.megazord ? this.state.selected-1 : this.state.selected+1);
+    }.bind(this), 7000);
 
   }
 
@@ -66,55 +75,62 @@ export default class Slider extends Component {
 
   moveLeft() {
     //if(this.halt) return;
-    if(this.halt||(this.state.selected===0)) return;
+    if(this.halt||(this.state.selected===0)||!this.refs.slider) return;
     this.refs.slider.style.pointerEvents='none';
     $(this.refs.slider).animate({
     scrollLeft: window.innerWidth*(this.state.selected-1)
   }, 700);
   setTimeout(function() {
     this.halt=false;
-    this.refs.slider.style.pointerEvents='';
+
     this.setState({selected: this.state.selected-1});
+    if(!this.refs.slider) return;
+    this.refs.slider.style.pointerEvents='';
   }.bind(this), 700);
   //  this.doScroll.call(this, this.refs.slider, this.startScroll-window.innerWidth);
   }
 
   moveTo(n) {
-    if(this.halt||(n>this.state.placeholder.length-1)||(n<0)) return;
+    if(this.halt||(n>this.state.placeholder.length-1)||(n<0)||!this.refs.slider) return;
     this.refs.slider.style.pointerEvents='none';
     $(this.refs.slider).animate({
     scrollLeft:window.innerWidth*n
   }, 700);
     setTimeout(function() {
       this.halt=false;
-      this.refs.slider.style.pointerEvents='';
+
       this.setState({selected: n});
+        if(!this.refs.slider) return;
+        this.refs.slider.style.pointerEvents='';
     }.bind(this), 700);
     //this.startScroll=
   }
 
   moveRight() {
-    if(this.halt||(this.state.selected===this.state.placeholder.length-1)) return;
+    if(this.halt||(this.state.selected===this.state.placeholder.length-1)||!this.refs.slider) return;
     this.refs.slider.style.pointerEvents='none';
     $(this.refs.slider).animate({
     scrollLeft:window.innerWidth*(this.state.selected+1)
   }, 700);
     setTimeout(function() {
       this.halt=false;
-      this.refs.slider.style.pointerEvents='';
+
       this.setState({selected: this.state.selected+1});
+      if(!this.refs.slider) return;
+      this.refs.slider.style.pointerEvents='';
     }.bind(this), 700);
     //this.startScroll=
   }
 
   moveStart() {
-    if(this.halt) return;
+    if(this.halt||!this.refs.slider) return;
     this.refs.slider.style.pointerEvents='none';
     $(this.refs.slider).animate({
     scrollLeft: window.innerWidth*this.state.selected
   }, 700);
   setTimeout(function() {
     this.halt=false;
+    if(!this.refs.slider) return;
     this.refs.slider.style.pointerEvents='';
   }.bind(this));
 

@@ -18,7 +18,7 @@ class Footer extends Component {
 
 
   render() {
-    const logobrasilcap = require('../../img/logobrasilcap.png');
+    const logobrasilcap = require('../../img/logobrasilcapp.png');
     const facebookIcon = require('../../img/facebookIcon.png');
     const twitterIcon = require('../../img/twitterIcon.png');
     const linkedinIcon = require('../../img/linkedinIcon.png');
@@ -28,7 +28,7 @@ return (
 
 <div className={`${styles.footerFull}`}>
   <div className="container">
-    <img src={logobrasilcap} className={styles.logobrasilcap}></img>
+    <img width="140" height="40" src={logobrasilcap} className={styles.logobrasilcap}></img>
     <div className={styles.nomeBlog}>Zero Perrengue</div>
     <div className={styles.redesSociais}>
       <div className={styles.boxTodas}>

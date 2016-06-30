@@ -1,6 +1,31 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
+
+@mixin aspect-ratio($width, $height) {
+  & {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-bottom: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+.imagemBlog {
+  @include aspect-ratio(350,200);
+
+    width: 100%;
+    margin-bottom:0.5em;
+    background-position: center;
+    background-size: cover;
+
+}
 .historiasBox {
   background-color: #f5f5f5;
   margin-top: 3em;
@@ -25,8 +50,10 @@ align-items: center;
   display:inline-block;
 }
 .anteriorHisto {
+    // max-width: 350px;
 display:inline-block;
-
+margin-left: auto;
+margin-right: auto;
 color:#333333;
 font-weight: bold;
 font-size:0.8em;
@@ -35,6 +62,9 @@ cursor: pointer;
 margin-bottom: 1em;
 }
 .proximaHist {
+  margin-left: auto;
+  margin-right: auto;
+    // max-width: 350px;
 display:inline-block;
 
 color:#333333;
@@ -57,6 +87,22 @@ font-weight: 900;
 .FotoAcaoNoticias {
   width: 100%;
   display:block;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 992px),
+only screen and ( min--moz-device-pixel-ratio: 2) and (max-width: 992px),
+only screen and ( -o-min-device-pixel-ratio: 2/1) and (max-width: 992px),
+only screen and ( min-device-pixel-ratio: 2) and (max-width: 992px),
+only screen and ( min-resolution: 192dpi) and (max-width: 992px),
+only screen and ( min-resolution: 2dppx) and (max-width: 992px),
+only screen and (max-width: 992px) {
+  .acaoAnterior {
+    display:inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size:15px;
+    letter-spacing: 0;
+  }
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 767px),
