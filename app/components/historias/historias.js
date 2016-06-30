@@ -36,7 +36,7 @@ class Historias extends Component {
         <div className={styles.boxProximo}>
         <div className={styles.boxIntro}>
 
-        <div className={styles.acaoAnterior} style={{marginRight: '1em'}}>Próxima História</div>
+        <div className={styles.acaoAnterior} style={{marginRight: '1em'}}>PRÓXIMA HISTÓRIA</div>
         <img width="8" height="10" className={styles.setinhaAcao} src={acaoSetaDireita}></img>
             </div>
         <img src={next.preview_image ? next.preview_image : mull} className={styles.FotoAcaoNoticias}></img>
@@ -67,7 +67,7 @@ class Historias extends Component {
 
 
         <img width="8" height="10" className={styles.setinhaAcao} src={acaoSetaEsquerda}></img>
-        <div className={styles.acaoAnterior} style={{marginLeft: '1em'}}>História anterior</div>
+        <div className={styles.acaoAnterior} style={{marginLeft: '1em'}}>HISTÓRIA ANTERIOR</div>
             </div>
         <img src={previous.preview_image ? previous.preview_image : null} className={styles.FotoAcaoNoticias}></img>
         <div className={styles.tituloNoticiaAcao}>{previous.post_title}</div>
