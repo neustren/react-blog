@@ -14,7 +14,7 @@ module.exports = Object.assign({
   port: parseInt(process.env.PORT) || 3100,
   app: {
     title: 'Zero Perrengue',
-    description: 'All the modern best practices in a blog.',
+    description: 'Blog da Brasilcap, empresa líder em capitalização.',
 
     meta: {
       author: 'Effy Ltda. - www.effy.com.br',

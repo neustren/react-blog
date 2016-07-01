@@ -10,9 +10,11 @@ RUN yum install -y nodejs gcc-c++ make
 
 # Install app dependencies
 COPY package.json /src/package.json
-RUN cd /src; npm install
+RUN cd /src; npm install; npm dedupe
 
 #RUN npm install -g webpack
+
+#RUN rm -rf app
 
 # Bundle app source
 COPY . /src

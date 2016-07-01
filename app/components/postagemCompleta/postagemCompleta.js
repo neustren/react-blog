@@ -16,6 +16,7 @@ import comment from '../../img/comment.png';
 var ReactDisqusThread = require('react-disqus-thread');
 import Historias from '../../components/historias/historias';
 import { SITE_URL } from '../../actions/index';
+import DocumentMeta from 'react-document-meta';
 
 class postagemCompleta extends Component {
 
@@ -94,6 +95,7 @@ var titulo = post.title.rendered;
 
   return (
     <div>
+      <DocumentMeta title={titulo+ ' - Zero Perrengue'} description={subTitulo} extend/>
 
     <div className={`${styles.imagemBanner}`} style={{ backgroundImage: 'url(' + imagem + ')' }}>
       <div className={styles.backgroundBanner}>
@@ -148,12 +150,11 @@ var titulo = post.title.rendered;
 
             <ReactDisqusThread
 
-                            shortname={post.slug}
+                            shortname="zeroperrengue"
                             identifier={post.slug}
                             title={post.title.rendered}
                             url={window.location.href}
-                            category_id={""+categoria}
-/>
+                          />
             </div>
           {/*<img src={entrenaconversamobile} className={`${styles.entrenaconversamobile} hidden-sm hidden-lg hidden-md hidden-xl`}></img>
           <img src={entrenaconversadesktop} className={`${styles.entrenaconversadesktop} hidden-xs`}></img>*/}

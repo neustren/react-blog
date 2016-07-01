@@ -50,7 +50,6 @@ export default class Slider extends Component {
             titulo: a.title.rendered,
             subTitulo: a.Subtitulo[0],
             data: ('0'+d.getDate()).slice(-2) + '/' + ('0' + (d.getMonth() + 1)).slice(-2) + '/' + d.getFullYear(),
-            autor: a.autor_name[0],
             categories: a.categories,
             tempo: a.minutos_para_ler[0],
             slug: a.slug
