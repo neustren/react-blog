@@ -78,7 +78,7 @@ try {
 
   var minutosPraLer = post.minutos_para_ler ? post.minutos_para_ler[0] : '';
 
-  var categorias = post.categories.filter(function(x) {return (x!==9) && (x!==1)});
+  var categorias = post.categories.filter(function(x) {return (x!==9) && (x!==1) && (x!==10)});
   var categoria = categorias.length ? categorias[0] : 1;
 var titulo = post.title.rendered;
    var subTitulo = post.Subtitulo[0];
@@ -150,7 +150,7 @@ var titulo = post.title.rendered;
 
             <ReactDisqusThread
 
-                            shortname="zeroperrengue"
+                            shortname="zeroperrengue2"
                             identifier={post.slug}
                             title={post.title.rendered}
                             url={window.location.href}

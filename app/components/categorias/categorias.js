@@ -21,7 +21,7 @@ class Categorias extends Component {
 
     var categoriaDoPost = this.props.opcoes;
     if(!categoriaDoPost) return (<div></div>);
-    var categories = {4: {"name":"Atualidades","slug":"atualidades","id":4},3 : {"name":"Capitalização","slug":"capitalizacao","id":3}, 9: {"name":"Destaque","slug":"destaque","id":9}, 2: {"name":"Finanças","slug":"financas","id":2}, 1: {"name":"Invisível","slug":"invisivel","id":1}, 5: {"name":"Meio Ambiente","slug":"meio_ambiente","id":5}};
+    var categories = {4: {"name":"Atualidades","slug":"atualidades","id":4},3 : {"name":"Capitalização","slug":"capitalizacao","id":3}, 9: {"name":"Destaque","slug":"destaque","id":9},10: {"name":"Recente","slug":"recente","id":10}, 2: {"name":"Finanças","slug":"financas","id":2}, 1: {"name":"Invisível","slug":"invisivel","id":1}, 5: {"name":"Meio Ambiente","slug":"meio_ambiente","id":5}};
     var l = categoriaDoPost.length;
                   var n = 0;
     if(categoriaDoPost) {
@@ -29,7 +29,7 @@ class Categorias extends Component {
 
           for(; n<l; n++) {
             var i=categoriaDoPost[n];
-              if ((i!==9) && (i!==1) && categories[i]) {
+              if ((i!==9) && (i!==1) && (i!==10) && categories[i]) {
                 var i=categoriaDoPost[n];
 
             var id = categories[i].id;
@@ -38,7 +38,7 @@ class Categorias extends Component {
 
               var slug = categories[i].slug;
             var name = categories[i].name;
-                        
+
 
                     return  <div key={id} className={styles[slug]}>{name}</div>
 

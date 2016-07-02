@@ -64,7 +64,7 @@ searchStart(e) {
 }
 
   render() {
-    const logo = require('../../img/Logo.png');
+    const logo = require('../../img/zerop.png');
     const mail = require('../../img/Mail.png');
     const lupa = require('../../img/Lupa.png');
     const div = require('../../img/Div.png');
@@ -77,9 +77,9 @@ return (
   <div className={`container`}>
     <div className={styles.headerIn}>
     <div className={styles.LogoNome}>
-      <img src={logo}></img>
+      {/*<img src={logo}></img>*/}
       <Link to="/">
-      <div className={styles.NomeBlog}>Zero Perrengue</div>
+      <img width="165" height="40" src={logo}/>
       </Link>
     </div>
     <div className={styles.IconesHeader}>

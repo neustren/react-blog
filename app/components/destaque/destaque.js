@@ -62,7 +62,7 @@ export default class Destaque extends Component {
             banner: a.banner||a.preview_image,
             titulo: a.title.rendered,
             subTitulo: a.Subtitulo[0],
-            data: ('0'+d.getDate()).slice(-2) + '/' + ('0' + (d.getMonth() + 1)).slice(-2) + '/' + d.getFullYear(),
+            data: a.date.slice(8,10) + '/' + a.date.slice(5,7) + '/' + a.date.slice(0,4),
             // autor: a.autor_name[0],
             categories: a.categories,
             tempo: a.minutos_para_ler[0],
@@ -99,7 +99,7 @@ return (
     </div>
     <div ref="slider"
       onMouseDown={(e) => { e.persist(); this.startScroll=this.refs.slider.scrollLeft;  this.dragging=e.pageX||(e.pageX+1);}}
-        onMouseUp={(e) => {e.persist(); var dragging=this.dragging; this.dragging=false; if(e.pageX-dragging>200) {this.moveTo.call(this,this.state.selected-1);return;} else if(e.pageX-dragging<-200) {this.moveTo.call(this, this.state.selected+1); return;} this.moveTo.call(this,this.state.selected)}}
+        onMouseUp={(e) => {e.persist(); var dragging=this.dragging; this.dragging=false; if(e.pageX-dragging>100) {this.moveTo.call(this,this.state.selected-1);return;} else if(e.pageX-dragging<-100) {this.moveTo.call(this, this.state.selected+1); return;} this.moveTo.call(this,this.state.selected)}}
         onMouseMove={(e) => {e.persist(); if(!this.dragging) return;  this.refs.slider.scrollLeft=this.startScroll-(e.pageX-this.dragging);}}
         onMouseLeave={(e) => {if(this.dragging) {this.moveTo.call(this, this.state.selected); this.dragging=false}}}
       className={styles.Slider}>

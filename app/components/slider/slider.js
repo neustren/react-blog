@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import styles from './slider.css';
+import styles from './slider.less';
 import Assinatura from '../../components/assinatura/assinatura';
 import Categorias from '../../components/categorias/categorias';
 import $ from 'jquery';
@@ -32,12 +32,23 @@ export default class Slider extends Component {
 
   }
 
+  updateDimensions() {
+        this.setState({width: $(window).width(), height: $(window).height()});
+    }
+
+
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.updateDimensions.bind(this));
+    }
+
   componentDidMount() {
     //this.refs.slider.addEventListener("mousemove",(e) => { } )
     window.addEventListener('resize', function(){
       if(!this.refs.slider) return;
     this.refs.slider.scrollLeft=window.innerWidth*this.state.selected;
   }.bind(this));
+  window.addEventListener("resize", this.updateDimensions.bind(this));
+  this.updateDimensions.call(this);
 
     $.ajax({
       url: ROOT_URL + '/wp-json/wp/v2/posts?categories=9',
@@ -49,7 +60,8 @@ export default class Slider extends Component {
             banner: a.banner,
             titulo: a.title.rendered,
             subTitulo: a.Subtitulo[0],
-            data: ('0'+d.getDate()).slice(-2) + '/' + ('0' + (d.getMonth() + 1)).slice(-2) + '/' + d.getFullYear(),
+            // data: ('0'+d.getDate()).slice(-2) + '/' + ('0' + (d.getMonth() + 1)).slice(-2) + '/' + d.getFullYear(),
+            data: a.date.slice(8,10) + '/' + a.date.slice(5,7) + '/' + a.date.slice(0,4),
             categories: a.categories,
             tempo: a.minutos_para_ler[0],
             slug: a.slug
@@ -139,9 +151,9 @@ export default class Slider extends Component {
   render() {
     console.log(this.state.selected);
     return (
-      <div className={styles.sliderWrapper}>
+      (this.state.width<1024) ? (<div className={styles.sliderWrapper}>
       <div  ref="slider" onMouseDown={(e) => {e.persist(); this.startScroll=this.refs.slider.scrollLeft;  this.dragging=e.pageX||(e.pageX+1);}}
-        onMouseUp={(e) => {e.persist(); var dragging=this.dragging; this.dragging=false; if(e.pageX-dragging>200) {this.moveLeft.call(this);return;} else if(e.pageX-dragging<-200) {this.moveRight.call(this); return;} this.moveStart.call(this)}}
+        onMouseUp={(e) => {e.persist(); var dragging=this.dragging; this.dragging=false; if(e.pageX-dragging>100) {e.preventDefault(); e.stopPropagation; this.moveLeft.call(this);return;} else if(e.pageX-dragging<-100) {e.preventDefault(); e.stopPropagation; this.moveRight.call(this); return;} this.moveStart.call(this)}}
         onMouseMove={(e) => {e.persist(); if(!this.dragging) return;  this.refs.slider.scrollLeft=this.startScroll-(e.pageX-this.dragging);}}
         onMouseLeave={(e) => {if(this.dragging) {this.moveStart.call(this); this.dragging=false}}}
          className={styles.Slider}>
@@ -168,14 +180,23 @@ export default class Slider extends Component {
         </div>
       </div>
       </div>
-    </div>
+    </div>) :
+    (<div ref="megaSlider" className={styles.megaSlider}>
+      <Slide {...this.state.placeholder[0]} megaSchizo={true} megaCrap={this.refs.megaSlider}></Slide>
+      <div className={styles.megaSchizo}>
+        <MiniSlide {...this.state.placeholder[1]}></MiniSlide>
+        <MiniSlide {...this.state.placeholder[2]}></MiniSlide>
+        <MiniSlide {...this.state.placeholder[3]}></MiniSlide>
+      </div>
+    </div>)
+
     )
   }
 }
 
 class Slide extends Component {
   joinPost() {
-
+        if(this.dragging||this.halt) return;
         this.context.router.push('/post/'+this.props.slug);
 
   }
@@ -188,18 +209,18 @@ class Slide extends Component {
       window.addEventListener('resize', _.debounce(function(){
         // this.forceUpdate.call(this, function() {
 
-          $(this.refs.titulo).triggerHandler('update.dot');
-          $(this.refs.subTitulo).triggerHandler('update.dot');
+          // $(this.refs.titulo).triggerHandler('update.dot');
+          // $(this.refs.subTitulo).triggerHandler('update.dot');
         // }.bind(this));
 
     }.bind(this), 150).bind(this));
-    $(this.refs.titulo).dotdotdot();
-    $(this.refs.subTitulo).dotdotdot();
+    // $(this.refs.titulo).dotdotdot();
+    // $(this.refs.subTitulo).dotdotdot();
     }
   render() {
     var props=this.props;
   return (
-  <div className={`${styles.imagemBanner}`} style={{
+  <div className={`${styles.megaImagemBanner}`} style={{
     backgroundImage: 'url(' + props.banner + ')'
   }}>
     <div className={styles.backgroundBanner}>
@@ -210,6 +231,71 @@ class Slide extends Component {
           <div ref="titulo" className={styles.tituloBanner}>{props.titulo}</div>
           <div ref="subTitulo"  className={styles.subTituloBanner}>{props.subTitulo}</div>
         <Assinatura cor="white" autor={props.autor} data={props.data} tempo={props.tempo}></Assinatura>
+        {props.megaSchizo&& (  <div>
+          <div className={styles.leiaMais}>
+                LEIA MAIS {seta('#fff')}
+              </div>
+               <div onClick={(e) => {
+                   e.stopPropagation();
+                   e.preventDefault();
+                 $('html, body').animate({
+                    scrollTop: $(props.megaCrap).offset().top+$(props.megaCrap).height()
+                  }, 700);
+                 }} className={styles.vejaTudo}>{seta('#fff')}VEJA TODOS OS POSTS</div>
+               </div>
+            )}
+        </div>
+
+      </div>
+    </div>
+  </div>
+)
+  }
+}
+
+var seta=function(fill) {
+  return (<svg style={{fill}} version="1.1" id="Camada_1" x="0px" y="0px"
+  	 width="22px" height="22px" viewBox="0 0 22 22" enable-background="new 0 0 22 22" >
+  <g>
+  	<path d="M11,2.5c4.687,0,8.5,3.813,8.5,8.5s-3.813,8.5-8.5,8.5S2.5,15.687,2.5,11S6.313,2.5,11,2.5 M11,1C5.477,1,1,5.477,1,11
+  		s4.477,10,10,10s10-4.477,10-10S16.523,1,11,1L11,1z"/>
+  </g>
+  <polygon points="13.652,7.818 12.591,6.757 9.409,9.939 8.348,11 12.591,15.243 13.652,14.182 10.47,11 "/>
+  </svg>)
+}
+
+class MiniSlide extends Component {
+  joinPost() {
+        if(this.dragging||this.halt) return;
+        this.context.router.push('/post/'+this.props.slug);
+
+  }
+
+  static contextTypes = {
+  router: React.PropTypes.object.isRequired
+  }
+
+    componentDidMount() {
+    // $(this.refs.titulo).dotdotdot();
+    // $(this.refs.subTitulo).dotdotdot();
+    }
+  render() {
+    var props=this.props;
+  return (
+  <div className={`${styles.schizoImagemBanner}`} style={{
+    backgroundImage: 'url(' + props.banner + ')'
+  }}>
+    <div className={styles.backgroundBanner}>
+      <div className={styles.maculele}>
+        <div onClick={this.joinPost.bind(this)} style={{cursor: 'pointer'}} className={styles.informacoesBanner}>
+          {/*<div className={styles.corCategoria}>{props.categoria}</div>*/}
+          <Categorias opcoes={props.categories}></Categorias>
+          <div ref="titulo" className={styles.tituloBanner}>{props.titulo}</div>
+          <div ref="subTitulo"  className={styles.subTituloBanner}>{props.subTitulo}</div>
+        <Assinatura cor="white" autor={props.autor} data={props.data} tempo={props.tempo}></Assinatura>
+          <div className={styles.leiaMais}>
+            LEIA MAIS {seta('#fff')}
+          </div>
         </div>
 
       </div>

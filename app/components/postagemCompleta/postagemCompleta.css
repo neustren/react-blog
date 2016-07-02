@@ -3,7 +3,8 @@
 .barraLateralShare {
   position: absolute;
   left: 10%;
-  top: 60%;
+  /*top: 60%;*/
+      margin-top: 100px;
 }
 
 .fbcomments {
@@ -27,6 +28,16 @@ margin-left:10px;
 }
 
 .imagemBanner {
+  height:500px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+align-items: flex-end;
+}
+
+.megaImagemBanner {
   height:330px;
   width: 100%;
   background-size: cover;

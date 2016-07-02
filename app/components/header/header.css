@@ -15,6 +15,7 @@ justify-content: space-between;
 .LogoNome {
   color: white;
       display: inline-block;
+      padding-top: 5px;
 }
 .NomeBlog {
   color: #fff;
@@ -27,7 +28,8 @@ justify-content: space-between;
 }
 .IconesHeader {
   margin-left: auto;
-      display: inline-block;
+      display: flex;
+      align-items: center;
 }
 .iconeIndividual {
   margin-left: 1em;

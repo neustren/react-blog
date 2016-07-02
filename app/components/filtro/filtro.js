@@ -16,8 +16,8 @@ import { getPostsByCategory } from '../../actions/postsByCategory';
 
 class Filtro extends Component {
   componentDidMount() {
-  this.props.selectCategory(0);
-  this.props.getPostsByCategory(0,0);
+  this.props.selectCategory(10);
+  this.props.getPostsByCategory(10,0);
 }
 
 SendGetPostsByCategory(e) {
@@ -43,8 +43,8 @@ this.props.getPostsByCategory(e,0);
 
 <div className="container">
   <div className={styles.linhaFlex}>
-  <div onClick={() => {this.SendGetPostsByCategory(0)}} onMouseLeave={e => {e.persist(); this.refs.imgRecentes.src = (this.props.state.selectedCategory.selected == 0) ? iconeFiltroRecentesHover : iconeFiltroRecentes}} onMouseOver={e => {e.persist(); this.refs.imgRecentes.src = iconeFiltroRecentesHover}} className={`${styles.boxTags} ${this.props.state.selectedCategory.selected == 0 ? styles.recenteSelected : styles.recente}`}>
-    <img height="30" width="30" className={styles.iconeFiltro} ref="imgRecentes" src={(this.props.state.selectedCategory.selected == 0) ? iconeFiltroRecentesHover : iconeFiltroRecentes}></img>
+  <div onClick={() => {this.SendGetPostsByCategory(10)}} onMouseLeave={e => {e.persist(); this.refs.imgRecentes.src = (this.props.state.selectedCategory.selected == 10) ? iconeFiltroRecentesHover : iconeFiltroRecentes}} onMouseOver={e => {e.persist(); this.refs.imgRecentes.src = iconeFiltroRecentesHover}} className={`${styles.boxTags} ${this.props.state.selectedCategory.selected === 10 ? styles.recenteSelected : styles.recente}`}>
+    <img height="30" width="30" className={styles.iconeFiltro} ref="imgRecentes" src={(this.props.state.selectedCategory.selected == 10) ? iconeFiltroRecentesHover : iconeFiltroRecentes}></img>
     <div className={styles.nomeFiltro}>RECENTES</div>
   </div>
   <div onClick={() => {this.SendGetPostsByCategory(2)}}  onMouseLeave={e => {e.persist(); this.refs.imgFinancas.src = (this.props.state.selectedCategory.selected == 2) ? iconeFiltroFinancasHover : iconeFiltroFinancas}} onMouseOver={e => {e.persist(); this.refs.imgFinancas.src = iconeFiltroFinancasHover}} className={`${this.props.state.selectedCategory.selected == 2 ? styles.financasSelected : styles.financas} ${styles.boxTags}`}>
