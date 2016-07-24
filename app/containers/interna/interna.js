@@ -62,7 +62,6 @@ return (
 
   </div>
 
-  <Footer></Footer>
 </div>
 )
 }

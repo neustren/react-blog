@@ -115,12 +115,12 @@ var titulo = post.title.rendered;
     <div className={styles.corpo}>
 
       <div style={{marginBottom: "2.4em"}} className="container">
-        <div className={`${styles.barraLateralShare} hidden-xs`}>
+        {/*<div className={`${styles.barraLateralShare} hidden-xs`}>
           <img onClick={() => window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location))} className={styles.shareCollumn} src={fbCinzaIcon}></img>
           <img onClick={() => window.open('https://twitter.com/home?status='+encodeURIComponent(window.location))} className={styles.shareCollumn} src={twCinzaIcon}></img>
           <img onClick={() => window.open('https://www.linkedin.com/shareArticle?mini=true&url='+encodeURIComponent(window.location)+'&title='+encodeURIComponent(titulo))} className={styles.shareCollumn} src={lkCinzaIcon}></img>
           <img className={styles.shareCollumn} src={cmCinzaIcon}></img>
-        </div>
+        </div>*/}
         <div className={styles.boxTodoTexto}>
         <div className="col-sm-offset-2 col-sm-8 col-xs-12">
           <div className={styles.subtitulo}>{subTitulo}</div>

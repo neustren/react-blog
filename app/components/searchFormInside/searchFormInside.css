@@ -19,10 +19,7 @@
 }
 .inputBuscaHeader {
       border-radius: 2px !important;
-      background-repeat: no-repeat;
-      background-position-y: 6px;
-      background-position-x: 2px;
-      padding: 6px 30px !important;
+
 }
 .formGroup {
   margin-bottom:15px;

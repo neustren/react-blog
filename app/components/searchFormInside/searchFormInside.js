@@ -4,9 +4,9 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router';
 import { bindActionCreators } from 'redux';
 import { getSearch, searchOn } from '../../actions/search';
-import styles from './searchForm.css';
+import styles from './searchFormInside.css';
 
-class searchForm extends Component {
+class searchFormInside extends Component {
   static contextTypes = {
     router: React.PropTypes.object.isRequired
   };
@@ -93,20 +93,22 @@ class searchForm extends Component {
 
 render() {
 
+// headerzin eh true se for a busca que ta no header, manter a outra do jeito que está.
+// pois eh a searchform que aparece dentro do container da busca antigo que deve ser mantido
 
     const lupa = require('../../img/lupaBuscaHeader.png');
-// const headerzin = this.props.headerzin;
+const headerzin = this.props.headerzin;
 
     return (
-      <div >
+      <div className={`${headerzin ? styles.boxBaseHeader : styles.boxBase}`}>
 
       <form onSubmit={this.onSubmit.bind(this)}>
 
-        <div  >
-          <input style={{ backgroundImage: 'url(' + lupa + ')' }} placeholder="Digite sua busca..."
+        <div className={`${headerzin ? styles.formGroupHeader : styles.formGroup}`}>
+          <input placeholder="Digite sua busca..."
             type="text" value={this.state.value}
             onChange={(event) => {event.persist(); this.setState({value: event.target.value});  this.debounceLocate(event);}}
-            className={`form-control ${styles.inputBuscaHeader}`}
+            className={`form-control ${ headerzin ? styles.inputBuscaHeader : styles.inputBusca}`}
             />
         </div>
       </form>
@@ -125,4 +127,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ getSearch, searchOn }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(searchForm);
+export default connect(mapStateToProps, mapDispatchToProps)(searchFormInside);

@@ -10,10 +10,16 @@ import { bindActionCreators } from 'redux';
 import Contato from '../../components/contato/contato';
 
 class Footer extends Component {
-
+  static contextTypes = {
+  router: React.PropTypes.object.isRequired
+};
   open() {
     console.log(this);
   this.props.showModal(true);
+  }
+  changeSobre() {
+    this.context.router.push('/sobre');
+
   }
 
 
@@ -23,6 +29,7 @@ class Footer extends Component {
     const twitterIcon = require('../../img/twitterIcon.png');
     const linkedinIcon = require('../../img/linkedinIcon.png');
     const mailIcon = require('../../img/mailIcon.png');
+        const sobreIcon = require('../../img/sobreIcon.png');
 
 return (
 
@@ -32,6 +39,10 @@ return (
     <div className={styles.nomeBlog}>Zero Perrengue</div>
     <div className={styles.redesSociais}>
       <div className={styles.boxTodas}>
+      <div onClick={(e) => {this.changeSobre();}} className={styles.redeSociaisIndividuais}>
+        <img className={styles.iconeRedeSocial} src={sobreIcon}></img>
+        <div className={styles.nomeRedeSocial}>SOBRE</div>
+      </div>
       <div onClick={(e) => {this.open();}} className={styles.redeSociaisIndividuais}>
         <img className={styles.iconeRedeSocial} src={mailIcon}></img>
         <div className={styles.nomeRedeSocial}>CONTATO</div>

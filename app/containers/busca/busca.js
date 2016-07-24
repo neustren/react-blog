@@ -4,7 +4,7 @@ import Header from '../../components/header/header';
 import Footer from '../../components/footer/footer';
 import styles from './busca.css';
 import {Link} from 'react-router';
-import SearchForm from '../../components/searchForm/searchForm';
+import SearchFormInside from '../../components/searchFormInside/searchFormInside';
 import SearchResponse from '../../components/searchResponse/searchResponse';
 //     import Assinatura from '../../components/assinatura/assinatura';
 //
@@ -64,7 +64,7 @@ return (
 
 <div className={`container ${styles.base}`}>
 
-<SearchForm></SearchForm>
+<SearchFormInside></SearchFormInside>
 <SearchResponse></SearchResponse>
 
 </div>

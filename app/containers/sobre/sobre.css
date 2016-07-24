@@ -1,0 +1,301 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700,900);
+@import url(https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic);
+
+.barraLateralShare {
+  position: absolute;
+  left: 10%;
+  /*top: 60%;*/
+      margin-top: 100px;
+}
+
+.fbcomments {
+  margin-top: 2em;
+}
+.btnBlue {
+  background: #005aa1;
+    /* border-bottom-color: #004d89; */
+    border-bottom: solid 4px #004d89;
+    max-width: 480px;
+    margin: auto;
+    padding: 14px;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    letter-spacing: 2px;
+    display: flex;
+align-items: center;
+justify-content: center;
+margin-left:10px;
+}
+
+.imagemBanner {
+  height:500px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+align-items: flex-end;
+}
+
+.megaImagemBanner {
+  height:330px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+align-items: flex-end;
+}
+.subtitulo {
+    font-size: 32px;
+    font-family: "Roboto";
+    color: rgb(153, 153, 153);
+    line-height: 1.563;
+    text-align: left;
+margin-bottom: 1em;
+
+}
+.shareCollumn {
+  display: block;
+margin-left: auto;
+margin-right: auto;
+margin-top: 2em;
+    border: 5px solid #ffffff;
+}
+.textoPostagem > p > img {
+  max-width: 100% !important;
+  height: auto;
+}
+
+
+.shareCollumn:hover {
+background-color: #d6d6d6;
+    border: 5px solid #d6d6d6;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.iconeDestaque {
+      transform: scale(0.8);
+      margin-right:0.5em;
+      margin-top: 1em;
+}
+.textoPostagem {
+  margin-bottom: 2em;
+    font-size: 18px;
+    font-family: "Lora";
+    color: rgb(51, 51, 51);
+    line-height: 1.556;
+    text-align: left;
+
+
+}
+.boxTodoTexto {
+  margin-top:2em;
+}
+.corCategoria {
+  color: black;
+  background-color: #ffef00;
+  padding:0.4em 0.7em;
+  display: inline-block;
+}
+.tituloBanner {
+  font-size: 2em;
+  font-weight:bold;
+  color:white;
+  line-height: normal;
+  margin-top: 0.4em;
+}
+.subTituloBanner {
+  color: white;
+  font-size:0.9em;
+  font-weight: lighter;
+      margin-top: 0.4em;
+}
+.informacoesBanner {
+  /*width: 70%;*/
+  margin-bottom: 2em;
+  /*margin-left: auto;
+  margin-right: auto;*/
+}
+.backgroundBanner {
+      background: -webkit-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.9));
+      width: 100%;
+}
+.shareRow {
+  padding:0.5em;
+
+}
+.caixaAzul {
+  background-color: #005aa1;
+  flex: 1;
+  text-align: center;
+  padding: 0.2em;
+  margin: 0.5em;
+}
+.caixaAzul:hover {
+  cursor: pointer;
+}
+.linhaCompartilhar {
+  display: flex;
+  margin-bottom:1.8em;
+}
+.tagsTitulo {
+  color: #444444;
+  font-weight: bold;
+  font-size:1.3em;
+  margin-bottom:0.3em;
+}
+.boxTags {
+  background-color: #f5f5f5;
+  padding:0.7em;
+  color:#444444;
+  font-size:0.9em;
+  display: inline-block;
+  margin-right:0.7em;
+
+}
+.entrenaconversadesktop {
+
+display: block;
+margin-left: auto;
+margin-right: auto;
+margin-top: 3em;
+}
+.entrenaconversamobile {
+  width: 100%;
+display: block;
+margin-left: auto;
+margin-right: auto;
+margin-top: 3em;
+}
+
+.historiasBox {
+  background-color: #f5f5f5;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  padding-top: 2.5em;
+  padding-bottom: 2.5em;
+}
+
+.acaoAnterior {
+  display:inline-block;
+}
+.setinhaAcao {
+  display:inline-block;
+}
+.anteriorHisto {
+display:inline-block;
+margin-left: 1em;
+color:#333333;
+font-weight: bold;
+font-size:0.8em;
+letter-spacing: 1px;
+cursor: pointer;
+margin-bottom: 1em;
+}
+.proximaHist {
+display:inline-block;
+margin-right : 1em;
+color:#333333;
+font-weight: bold;
+font-size:0.8em;
+letter-spacing: 1px;
+cursor: pointer;
+margin-bottom: 1em;
+}
+.boxProximo {
+  text-align: right;
+}
+.tituloNoticiaAcao {
+  font-weight: bold;
+font-size: 1.1em;
+margin-top: 0.5em;
+
+}
+.FotoAcaoNoticias {
+  width: 100%;
+}
+
+.tituloLeiaMais {
+  margin-left: 2em;
+  color: #444444;
+  font-weight: bold;
+  font-size:1.2em;
+  margin-bottom:1em;
+  border-bottom: 1px solid black;
+  padding-bottom:1em;
+}
+
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 767px),
+only screen and ( min--moz-device-pixel-ratio: 2) and (max-width: 767px),
+only screen and ( -o-min-device-pixel-ratio: 2/1) and (max-width: 767px),
+only screen and ( min-device-pixel-ratio: 2) and (max-width: 767px),
+only screen and ( min-resolution: 192dpi) and (max-width: 767px),
+only screen and ( min-resolution: 2dppx) and (max-width: 767px),
+only screen and (max-width: 767px) {
+  .imagemBanner {
+  height: 500px;
+    }
+    .entrenaconversamobile {
+      width: 50%;
+    }
+    .informacoesBanner {
+      /*width: 90%;*/
+    }
+    .acaoAnterior {
+      display:block;
+    }
+
+    .tituloNoticiaAcao {
+      font-size:1.3em;
+      text-align: left;
+    }
+    .boxAnterior {
+      border-bottom: 1px solid #000000;
+      padding-bottom: 2em;
+      margin-bottom: 2em;
+    }
+    .anteriorHisto {
+    font-size:1em;
+    }
+    .proximaHist {
+    font-size:1em;
+    }
+          margin-bottom: 2em;
+
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 600px),
+only screen and ( min--moz-device-pixel-ratio: 2) and (max-width: 600px),
+only screen and ( -o-min-device-pixel-ratio: 2/1) and (max-width: 600px),
+only screen and ( min-device-pixel-ratio: 2) and (max-width: 600px),
+only screen and ( min-resolution: 192dpi) and (max-width: 600px),
+only screen and ( min-resolution: 2dppx) and (max-width: 600px),
+only screen and (max-width: 600px) {
+  .entrenaconversamobile {
+    width: 80%;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 500px),
+only screen and ( min--moz-device-pixel-ratio: 2) and (max-width: 500px),
+only screen and ( -o-min-device-pixel-ratio: 2/1) and (max-width: 500px),
+only screen and ( min-device-pixel-ratio: 2) and (max-width: 500px),
+only screen and ( min-resolution: 192dpi) and (max-width: 500px),
+only screen and ( min-resolution: 2dppx) and (max-width: 500px),
+only screen and (max-width: 500px) {
+  .entrenaconversamobile {
+    width: 90%;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 400px),
+only screen and ( min--moz-device-pixel-ratio: 2) and (max-width: 400px),
+only screen and ( -o-min-device-pixel-ratio: 2/1) and (max-width: 400px),
+only screen and ( min-device-pixel-ratio: 2) and (max-width: 400px),
+only screen and ( min-resolution: 192dpi) and (max-width: 400px),
+only screen and ( min-resolution: 2dppx) and (max-width: 400px),
+only screen and (max-width: 400px) {
+  .entrenaconversamobile {
+    width: 100%;
+  }
+}

@@ -11,7 +11,7 @@ import { getCategories } from '../../actions/categories';
 import { searchOn } from '../../actions/search';
 import Contato from '../../components/contato/contato';
 import { showModal } from '../../actions/modal';
-
+import SearchForm from '../../components/searchForm/searchForm';
 const fecharBusca = require('../../img/fecharBusca.png');
 
 class Header extends Component {
@@ -84,12 +84,14 @@ return (
       <img width="165" height="40" src={logo}/>
       </Link>
       <div className={`${styles.contato} ${styles.full}`}>
-        <Lupa onClick={(e) => {this.searchStart();}} width="20" height="20" className={styles.iconeIndividual} isOn={searchOn}></Lupa>
+        {/*<Lupa onClick={(e) => {this.searchStart();}} width="20" height="20" className={styles.iconeIndividual} isOn={searchOn}></Lupa>*/}
+            <SearchForm headerzin="true"/>
         </div>
     </div>
     <div className={`${styles.IconesHeader} ${styles.mini}`}>
       <img width="21" height="20" className={styles.iconeIndividual} onClick={(e) => {this.open();}} src={mail}></img>
       <img className={styles.iconeIndividual} src={div}></img>
+
       <img onClick={(e) => {this.searchStart();}} width="20" height="20" className={styles.iconeIndividual} src={searchOn ? fecharBusca : lupa}></img>
     </div>
     <div className={`${styles.IconesHeader} ${styles.full}`}>
