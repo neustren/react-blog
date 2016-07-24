@@ -33,7 +33,7 @@ export default class Destaque extends Component {
     if(this.halt||(n>this.state.placeholder.length-1)||(n<0)||!this.refs.slider) return;
     this.refs.slider.style.pointerEvents='none';
     $(this.refs.slider).animate({
-    scrollLeft:window.innerWidth*n
+    scrollLeft:window.document.body.scrollWidth*n
   }, 700);
     setTimeout(function() {
       this.halt=false;
@@ -50,7 +50,7 @@ export default class Destaque extends Component {
   componentDidMount() {
     window.addEventListener('resize', function(){
       if(!this.refs.slider) return;
-    this.refs.slider.scrollLeft=window.innerWidth*this.state.selected;
+    this.refs.slider.scrollLeft=window.document.body.scrollWidth*this.state.selected;
     }.bind(this));
     $.ajax({
       url: ROOT_URL + '/wp-json/wp/v2/posts?categories=9',

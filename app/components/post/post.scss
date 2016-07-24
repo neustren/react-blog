@@ -21,9 +21,14 @@
   margin-top: 3em;
   margin-left:2em;
   margin-right:2em;
-  border-bottom: 1px solid #d6d6d6;
+
   padding-bottom:2em;
 }
+
+.base:not(:last-child) {
+  border-bottom: 1px solid #d6d6d6;
+}
+
 .baseInt {
   margin-top: 3em;
 

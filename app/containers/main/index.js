@@ -6,14 +6,14 @@ import Header from '../../components/header/header';
 import DocumentMeta from 'react-document-meta';
 import config from '../../config';
       import Footer from '../../components/footer/footer';
-      
+
 require('../../styles/app.global.less');
 require('../../theme/bootstrap/css/bootstrap.global.css');
 require('./app.global.less');
 
 export default function(props) {
   return (
-    <div>
+    <div className={styles.pidgeott}>
       <DocumentMeta {...config.app}/>
       <Header></Header>
       {props.children}

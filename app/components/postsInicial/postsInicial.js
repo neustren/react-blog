@@ -52,7 +52,9 @@ return (
 
   <div className={styles.corpo}>
   <div className="container">
+    <div>
     {this.renderPosts()}
+  </div>
     <div className={styles.vejamais}>
     <div onClick={this.props.getPostsByCategory.bind(null, this.props.state.selectedCategory.selected, this.props.state.postsByCategory.page+1)} className={`${styles.btnBlue}`} style={{ display: !this.props.state.postsByCategory.hasMore ? 'none' : 'flex'}}><div>VEJA MAIS</div>
       <svg  width="20pt" height="13pt" viewBox="0 0 20 13" version="1.1" xmlns="http://www.w3.org/2000/svg">

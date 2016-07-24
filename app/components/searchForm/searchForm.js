@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router';
 import { bindActionCreators } from 'redux';
 import { getSearch, searchOn } from '../../actions/search';
-import styles from './searchForm.css';
+import styles from './searchForm.less';
 
 class searchForm extends Component {
   static contextTypes = {
@@ -98,9 +98,9 @@ render() {
 // const headerzin = this.props.headerzin;
 
     return (
-      <div >
+      <div className={styles.digglet} style={{flexGrow: '1', padding: '0 30px', display: 'flex', alignItems: 'center'}}>
 
-      <form onSubmit={this.onSubmit.bind(this)}>
+      <form style={{display: 'block', flex: '1'}} onSubmit={this.onSubmit.bind(this)}>
 
         <div  >
           <input style={{ backgroundImage: 'url(' + lupa + ')' }} placeholder="Digite sua busca..."

@@ -45,7 +45,7 @@ export default class Slider extends Component {
     //this.refs.slider.addEventListener("mousemove",(e) => { } )
     window.addEventListener('resize', function(){
       if(!this.refs.slider) return;
-    this.refs.slider.scrollLeft=window.innerWidth*this.state.selected;
+    this.refs.slider.scrollLeft=document.body.scrollWidth*this.state.selected;
   }.bind(this));
   window.addEventListener("resize", this.updateDimensions.bind(this));
   this.updateDimensions.call(this);
@@ -89,7 +89,7 @@ export default class Slider extends Component {
     if(this.halt||(this.state.selected===0)||!this.refs.slider) return;
     this.refs.slider.style.pointerEvents='none';
     $(this.refs.slider).animate({
-    scrollLeft: window.innerWidth*(this.state.selected-1)
+    scrollLeft: document.body.scrollWidth*(this.state.selected-1)
   }, 700);
   setTimeout(function() {
     this.halt=false;

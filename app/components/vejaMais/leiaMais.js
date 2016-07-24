@@ -74,12 +74,16 @@ class LeiaMais extends Component {
 
 return (
   <div className="container">
-          <div className="col-md-offset-2 col-lg-offset-2 col-xl-offset-2 col-sm-offset-2 col-md-8 col-lg-8 col-xl-8 col-sm-8 col-xs-12">
-    <div className={styles.tituloLeiaMais}>LEIA TAMBÉM:</div>
+    {this.props.state.postsByCategory.posts&&(this.props.state.postsByCategory.posts.length>1)&& (
+      <div className="col-md-offset-2 col-lg-offset-2 col-xl-offset-2 col-sm-offset-2 col-md-8 col-lg-8 col-xl-8 col-sm-8 col-xs-12">
+<div className={styles.tituloLeiaMais}>LEIA TAMBÉM:</div>
 
 {this.renderPostsLM()}
-      </div>
+  </div>
+
+    )}
     </div>
+
 )
 }
 }

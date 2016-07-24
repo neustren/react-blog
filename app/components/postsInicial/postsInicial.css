@@ -1,5 +1,5 @@
 .corpo {
-  margin-bottom:5em;
+  /*margin-bottom:5em;*/
 }
 .vejamais {
 
@@ -8,6 +8,7 @@ margin-right: auto;
 display: block;
 margin-top:2em;
 max-width: 480px;
+padding-bottom: 3em;
 }
 
 .btnBlue {

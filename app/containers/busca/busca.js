@@ -62,7 +62,7 @@ export default class Busca extends Component {
 
 return (
 
-<div className={`container ${styles.base}`}>
+<div className={`container ${styles.mewTwo}`}>
 
 <SearchFormInside></SearchFormInside>
 <SearchResponse></SearchResponse>
