@@ -70,7 +70,22 @@ margin-right: 1em;
 cursor: pointer;
 background-position: center;
 background-size: cover;
+flex-basis: 1;
+}
 
+.bazinga {
+  display: flex;
+  width: 110px;
+  justify-content: space-between;
+  svg {
+    flex-basis: 22px;
+    cursor: pointer;
+  }
+  margin-top: 0.8em;
+}
+
+.textos {
+  flex: 1;
 }
 
 .imagemDisplay {
@@ -108,7 +123,7 @@ only screen and ( min-resolution: 192dpi) and (min-width: 768px),
 only screen and ( min-resolution: 2dppx) and (min-width: 768px),
 only screen and (min-width: 768px) {
   .imagemBlog {
-    
+
     .content {
       width: 35vw;
       height: 20vw;

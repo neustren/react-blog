@@ -1,0 +1,83 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700,900);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+.headerFull {
+  background-color: #005aa1;
+  border-bottom: 4px solid #ffef00;
+}
+.headerIn {
+  color: white;
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+  display: flex;
+justify-content: space-between;
+}
+
+.masterLink {
+  flex-basis: 165px;
+flex-grow:0;
+flex-shrink: 0;
+}
+.LogoNome {
+  color: white;
+      display: flex;
+      padding-top: 5px;
+      align-items: center;
+      .full {
+        margin-left: 32px;
+        &:before {
+          content: '';
+          background: rgba(255,255,255,0.1);
+          margin-top: -10px;
+    margin-left: -5px;
+  width: 1px;
+  height: 35px;
+    display: block;
+    position: absolute;
+        }
+      }
+}
+.NomeBlog {
+  color: #fff;
+    text-decoration: none;
+  display: inline-block;
+  margin-left: 0.5em;
+  font-size: 1.3em;
+  font-weight: bold;
+  vertical-align: middle;
+}
+.IconesHeader {
+  margin-left: auto;
+      display: flex;
+      align-items: center;
+}
+.iconeIndividual {
+  margin-left: 1em;
+  cursor: pointer;
+}
+
+.mini {
+  display: none;
+  @media @tablet {
+    display: flex;
+  }
+}
+
+.full {
+  display: flex;
+  @media @tablet {
+    display: none;
+  }
+  flex-basis: 210px;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+@tablet: ~"@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 520px)",
+~"only screen and ( min--moz-device-pixel-ratio: 2) and (max-width: 520px)",
+~"only screen and ( -o-min-device-pixel-ratio: 2/1) and (max-width: 520px)",
+~"only screen and ( min-device-pixel-ratio: 2) and (max-width: 520px)",
+~"only screen and ( min-resolution: 192dpi) and (max-width: 520px)",
+~"only screen and ( min-resolution: 2dppx) and (max-width: 520px)",
+~"only screen and (max-width: 520px)";

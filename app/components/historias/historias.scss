@@ -1,6 +1,13 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
+$tablet: "only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 992px),
+only screen and ( min--moz-device-pixel-ratio: 2) and (max-width: 992px),
+only screen and ( -o-min-device-pixel-ratio: 2/1) and (max-width: 992px),
+only screen and ( min-device-pixel-ratio: 2) and (max-width: 992px),
+only screen and ( min-resolution: 192dpi) and (max-width: 992px),
+only screen and ( min-resolution: 2dppx) and (max-width: 992px),
+only screen and (max-width: 992px)";
 
 @mixin aspect-ratio($width, $height) {
   & {
@@ -60,6 +67,14 @@ font-size:0.8em;
 letter-spacing: 1px;
 cursor: pointer;
 margin-bottom: 1em;
+margin-right: 0;
+padding-right: 0;
+.tituloNoticiaAcao {
+  padding-right: 1em;
+  @media #{$tablet} {
+    font-size: 1.6em;
+  }
+}
 }
 .proximaHist {
   margin-left: auto;
@@ -73,6 +88,14 @@ font-size:0.8em;
 letter-spacing: 1px;
 cursor: pointer;
 margin-bottom: 1em;
+margin-left: 0;
+padding-left: 0;
+.tituloNoticiaAcao {
+  padding-left: 1em;
+  @media #{$tablet} {
+    font-size: 1.6em;
+  }
+}
 }
 .boxProximo {
   text-align: right;
@@ -125,9 +148,19 @@ only screen and (max-width: 767px) {
     }
     .anteriorHisto {
     font-size:1em;
+    margin-right: auto;
+    padding-right: 15px;
+    .tituloNoticiaAcao {
+      padding-right: 0;
+    }
     }
     .proximaHist {
     font-size:1em;
+    margin-left: auto;
+    padding-left: 15px;
+    .tituloNoticiaAcao {
+      padding-left: 0;
+    }
     }
 
 }

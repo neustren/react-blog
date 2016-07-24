@@ -8,6 +8,7 @@ import Assinatura from '../assinatura/assinatura';
 import { ROOT_URL }  from '../../actions/index';
 import { postOpened } from '../../actions/postOpened';
 import Categorias from '../categorias/categorias';
+import {LinkedIn, Facebook, Twitter} from '../header/header';
 
 class Post extends Component {
   static contextTypes = {
@@ -67,6 +68,12 @@ return (
 <div onClick={() => {this.joinPost();}} className={`${noimage ? styles.tituloInt : styles.titulo}`} style={{marginTop: imagemMargin}}>{data.title.rendered}</div>
 <div className={`${noimage ? styles.subtituloInt : styles.subtitulo}`}>{data.Subtitulo[0]}</div>
 <Assinatura data={dataFinal} tempo={minutosPraLer} autor="Brasilcap"></Assinatura>
+{this.props.yessen&&(
+  <div className={`${styles.subtituloInt} ${styles.bazinga}`}><Facebook style={{fill: "#3765a3"}} onClick={() => window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location))} />
+   <Twitter style={{fill: "#5ea9dd"}} onClick={() => window.open('https://twitter.com/home?status='+encodeURIComponent(window.location))} />
+   <LinkedIn onClick={() => window.open('https://www.linkedin.com/shareArticle?mini=true&url='+encodeURIComponent(window.location)+'&title='+encodeURIComponent(data.title.rendered))} style={{fill: "#0274b3"}}/></div>
+)}
+
 </div>
 </div>
 

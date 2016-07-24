@@ -7,6 +7,7 @@ import Post from '../post/post';
 import { getPostsByCategory } from '../../actions/postsByCategory';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
+
 class LeiaMais extends Component {
 
   componentDidMount() {
@@ -59,7 +60,7 @@ class LeiaMais extends Component {
         } else {
           count++;
           return (
-            <Post key={pt.id} noimage={true} data={pt}></Post>
+            <Post yessen={true} key={pt.id} noimage={true} data={pt}></Post>
           )
         }
       })
