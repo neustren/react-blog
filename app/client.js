@@ -16,12 +16,15 @@ import { Provider } from 'react-redux'
 import { Router, Route, IndexRoute, browserHistory, hashHistory } from 'react-router'
 import { syncHistoryWithStore, routerMiddleware, routerReducer } from 'react-router-redux'
 import getRoutes from './routes';
+import $ from 'jquery';
 
 
 
 let state = (typeof(window)!=='undefined')&& window.__initialState__ || undefined ;
 
 import createStore from './helpers/createStore.js';
+
+browserHistory.listen((location) => { $("html, body").animate({ scrollTop: 0 }, "fast");} );
 
 const store=createStore(state, browserHistory);
 // Create an enhanced history that syncs navigation events with the store

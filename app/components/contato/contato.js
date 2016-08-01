@@ -101,8 +101,8 @@ return (
       </form>}
     </div>
     <div className="col-sm-6" style={{textAlign: 'center'}}>
-      <div className={styles.titulo}>Fale com a <span className={styles.brasilcap}>Brasilcap</span></div>
-      <div className={styles.content}>Tire suas dúvidas, faça suas sugestões e observações <span className={styles.negrito}>nos campos ao lado</span> que lhe retornaremos.</div>
+      <div className={styles.titulo}>Fale com a equipe <span className={styles.brasilcap}>Zero Perrengue</span></div>
+      <div className={styles.content}>Dê sugestões e mande suas observações <span className={styles.negrito}>preenchendo os campos ao lado</span> e nós retornaremos o contato o mais rápido possível.</div>
       <div onClick={this.enviar.bind(this)} className={styles.botaoEnviar}>Enviar</div>
     </div>
   </div>

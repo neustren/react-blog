@@ -57,16 +57,16 @@ flex-shrink: 0;
 }
 
 .mini {
-  display: none;
+  display: none !important;
   @media @tablet {
-    display: flex;
+    display: flex !important;
   }
 }
 
 .full {
-  display: flex;
+  display: flex !important;
   @media @tablet {
-    display: none;
+    display: none !important;
   }
   flex-basis: 210px;
   justify-content: space-between;
@@ -74,7 +74,7 @@ flex-shrink: 0;
 
 }
 
-@tablet: ~"@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 730px)",
+@tablet: ~"only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 730px)",
 ~"only screen and ( min--moz-device-pixel-ratio: 2) and (max-width: 730px)",
 ~"only screen and ( -o-min-device-pixel-ratio: 2/1) and (max-width: 730px)",
 ~"only screen and ( min-device-pixel-ratio: 2) and (max-width: 730px)",

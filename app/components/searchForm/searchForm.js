@@ -18,6 +18,8 @@ import { bindActionCreators } from 'redux';
 import { getSearch, searchOn } from '../../actions/search';
 import styles from './searchForm.less';
 
+  const lupa = require('../../img/lupaBuscaHeader.png');
+
 class searchForm extends Component {
   static contextTypes = {
     router: React.PropTypes.object.isRequired
@@ -106,7 +108,7 @@ class searchForm extends Component {
 render() {
 
 
-    const lupa = require('../../img/lupaBuscaHeader.png');
+
 // const headerzin = this.props.headerzin;
 
     return (
