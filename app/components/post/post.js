@@ -20,7 +20,7 @@ import Assinatura from '../assinatura/assinatura';
 import { ROOT_URL }  from '../../actions/index';
 import { postOpened } from '../../actions/postOpened';
 import Categorias from '../categorias/categorias';
-import {LinkedIn, Facebook, Twitter} from '../header/header';
+import {LinkedIn, Facebook, Twitter, Whatsapp} from '../header/header';
 
 class Post extends Component {
   static contextTypes = {
@@ -83,7 +83,9 @@ return (
 {this.props.yessen&&(
   <div className={`${styles.subtituloInt} ${styles.bazinga}`}><Facebook style={{fill: "#3765a3"}} onClick={() => window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location))} />
    <Twitter style={{fill: "#5ea9dd"}} onClick={() => window.open('https://twitter.com/home?status='+encodeURIComponent(window.location))} />
-   <LinkedIn onClick={() => window.open('https://www.linkedin.com/shareArticle?mini=true&url='+encodeURIComponent(window.location)+'&title='+encodeURIComponent(data.title.rendered))} style={{fill: "#0274b3"}}/></div>
+   <LinkedIn onClick={() => window.open('https://www.linkedin.com/shareArticle?mini=true&url='+encodeURIComponent(window.location)+'&title='+encodeURIComponent(data.title.rendered))} style={{fill: "#0274b3"}}/>
+   <Whatsapp className={styles.whatsappi} onClick={() => window.open('whatsapp://send?text='+encodeURIComponent(window.location)+'&title='+encodeURIComponent(data.title.rendered))} style={{fill: "#34af23"}}/>
+   </div>
 )}
 
 </div>

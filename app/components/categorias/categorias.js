@@ -33,7 +33,7 @@ class Categorias extends Component {
 
     var categoriaDoPost = this.props.opcoes;
     if(!categoriaDoPost) return (<div></div>);
-    var categories = {4: {"name":"Atualidades","slug":"atualidades","id":4},3 : {"name":"Capitalização","slug":"capitalizacao","id":3}, 9: {"name":"Destaque","slug":"destaque","id":9},10: {"name":"Recente","slug":"recente","id":10}, 2: {"name":"Finanças","slug":"financas","id":2}, 1: {"name":"Invisível","slug":"invisivel","id":1}, 5: {"name":"Meio Ambiente","slug":"meio_ambiente","id":5}};
+    var categories = {4: {"name":"Meu dia-a-dia","slug":"atualidades","id":4},3 : {"name":"Minha Capitalização","slug":"capitalizacao","id":3}, 9: {"name":"Destaque","slug":"destaque","id":9},10: {"name":"Recente","slug":"recente","id":10}, 2: {"name":"Meu Dinheiro","slug":"financas","id":2}, 1: {"name":"Invisível","slug":"invisivel","id":1}, 5: {"name":"Meu Mundo","slug":"meio_ambiente","id":5}};
     var l = categoriaDoPost.length;
                   var n = 0;
     if(categoriaDoPost) {

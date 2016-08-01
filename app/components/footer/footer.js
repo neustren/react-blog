@@ -36,7 +36,7 @@ class Footer extends Component {
 
 
   render() {
-    const logobrasilcap = require('../../img/logobrasilcapp.png');
+    const logobrasilcap = require('../../img/logoBrasilcapp.png');
     const facebookIcon = require('../../img/facebookIcon.png');
     const twitterIcon = require('../../img/twitterIcon.png');
     const linkedinIcon = require('../../img/linkedinIcon.png');

@@ -35,7 +35,7 @@ const dest = document.getElementById('content');
 ReactDOM.render(
   <Provider store={store}>
     { /* Tell the Router to use our enhanced history */ }
-    <Router history={history}>
+    <Router onUpdate={() => window.scrollTo(0, 0)} history={history}>
       {getRoutes()}
     </Router>
   </Provider>,

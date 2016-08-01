@@ -101,6 +101,9 @@ flex-basis: 1;
 .imagemNotDisplay {
   display: block;
 }
+.whatsappi {
+  display: none;
+}
 @media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 767px),
 only screen and ( min--moz-device-pixel-ratio: 2) and (max-width: 767px),
 only screen and ( -o-min-device-pixel-ratio: 2/1) and (max-width: 767px),
@@ -117,6 +120,9 @@ only screen and (max-width: 767px) {
   .imagemDisplay {
 
     display: inline-block;
+  }
+  .whatsappi {
+    display: inline;
   }
 }
 

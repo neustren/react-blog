@@ -75,12 +75,14 @@ const fbCinzaIcon = require('../../img/fbCinzaIcon.png');
 const twCinzaIcon = require('../../img/twCinzaIcon.png');
 const cmCinzaIcon = require('../../img/cmCinzaIcon.png');
 const lkCinzaIcon = require('../../img/lkCinzaIcon.png');
-const Facebook = require('../../img/Facebook.png');
-const Twitter = require('../../img/Twitter.png');
-const Linkedin = require('../../img/Linkedin.png');
+const Facebook = require('../../img/Facebook-23.png');
+const Twitter = require('../../img/Twitter-23.png');
+const Linkedin = require('../../img/Linkedin-23.png');
+const Whatsapp = require('../../img/Whatsapp-23.png');
 const fbBrancoIcon = require('../../img/fbBrancoIcon.png');
 const twBrancoIcon = require('../../img/twBrancoIcon.png');
 const lkBrancoIcon = require('../../img/lkBrancoIcon.png');
+const Whatsapp2 = require('../../img/Whatsapp-22.png');
 
 const entrenaconversamobile = require('../../img/entrenaconversamobile.png');
 const entrenaconversadesktop = require('../../img/entrenaconversadesktop.png');
@@ -116,11 +118,11 @@ var titulo = post.title.rendered;
           <Categorias opcoes={categorias}></Categorias>
             <div className={styles.tituloBanner}>{titulo}</div>
             <Assinatura cor="white" autor={autor} data={data} tempo={tempo}></Assinatura>
-            <img style={{cursor: 'pointer'}} onClick={() => window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location))} className={styles.iconeDestaque} src={Facebook}></img>
-            <img style={{cursor: 'pointer'}} onClick={() => window.open('https://twitter.com/home?status='+encodeURIComponent(window.location))} className={styles.iconeDestaque} src={Twitter}></img>
-            <img style={{cursor: 'pointer'}} onClick={() => window.open('https://www.linkedin.com/shareArticle?mini=true&url='+encodeURIComponent(window.location)+'&title='+encodeURIComponent(titulo))} className={styles.iconeDestaque} src={Linkedin}></img>
+            <img height="50" width="51" style={{cursor: 'pointer'}} onClick={() => window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location))} className={styles.iconeDestaque} src={Facebook}></img>
+            <img height="50" width="51" style={{cursor: 'pointer'}} onClick={() => window.open('https://twitter.com/home?status='+encodeURIComponent(window.location))} className={styles.iconeDestaque} src={Twitter}></img>
+            <img height="50" width="51" style={{cursor: 'pointer'}} onClick={() => window.open('https://www.linkedin.com/shareArticle?mini=true&url='+encodeURIComponent(window.location)+'&title='+encodeURIComponent(titulo))} className={styles.iconeDestaque} src={Linkedin}></img>
+            <img height="50" width="51" style={{cursor: 'pointer'}} onClick={() => window.open('whatsapp://send?text='+encodeURIComponent(window.location)+'&title='+encodeURIComponent(titulo))} className={`${styles.iconeDestaque} ${styles.whatsappmobile}`} src={Whatsapp}></img>
           </div>
-
         </div>
       </div>
     </div>
@@ -148,6 +150,9 @@ var titulo = post.title.rendered;
             </div>
             <div onClick={() => window.open('https://www.linkedin.com/shareArticle?mini=true&url='+encodeURIComponent(window.location)+'&title='+encodeURIComponent(titulo))} className={styles.caixaAzul}>
               <img className={styles.shareRow} src={lkBrancoIcon}></img>
+            </div>
+            <div onClick={() => window.open('whatsapp://send?text='+encodeURIComponent(window.location)+'&title='+encodeURIComponent(titulo))} className={`${styles.caixaAzul} ${styles.whatsappmobile}`}>
+              <img width="36" height="36" className={styles.shareRow} src={Whatsapp2}></img>
             </div>
           </div>
           <Tags opcoes={post.tags}></Tags>
