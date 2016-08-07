@@ -25,14 +25,44 @@ import {bindActionCreators} from 'redux';
 import styles from './filtro.css';
 import { selectCategory } from '../../actions/selectCategory';
 import { getPostsByCategory } from '../../actions/postsByCategory';
+import {Link} from 'react-router';
 
 class Filtro extends Component {
+  static contextTypes = {
+    router: React.PropTypes.object.isRequired
+  };
+  static propTypes = {};
+
   componentDidMount() {
+    var where = window.location.pathname;
+    // console.log(where);
+    if (where != "/") {
+      // console.log('foi');
+      this.props.selectCategory(0);
+  }
+  else {
+
+  var selected = this.props.state.selectedCategory.selected;
+  if (selected) {
+    this.props.selectCategory(selected);
+    this.props.getPostsByCategory(selected,0);
+  }
+  else {
+
   this.props.selectCategory(10);
   this.props.getPostsByCategory(10,0);
 }
+}
+}
 
 SendGetPostsByCategory(e) {
+  var where = window.location.pathname;
+  console.log(where);
+  if (where != "/") {
+    console.log('foi');
+
+  this.context.router.push("/");
+}
   this.props.selectCategory(e,0);
 this.props.getPostsByCategory(e,0);
 }
@@ -71,13 +101,13 @@ this.props.getPostsByCategory(e,0);
     <img height="30" ref="imgCapitalizacao" width="30" className={styles.iconeFiltro} src={(this.props.state.selectedCategory.selected == 3) ? iconeFiltroCapitalizacaoHover : iconeFiltroCapitalizacao}></img>
   <div className={styles.nomeFiltro}>Minha Capitalização</div>
   </div>
-  <div onClick={() => {this.SendGetPostsByCategory(4)}}
+  {/*<div onClick={() => {this.SendGetPostsByCategory(4)}}
     onMouseLeave={e => {e.persist(); this.refs.imgAtualidades.src = (this.props.state.selectedCategory.selected == 4) ? iconeFiltroAtualidadesHover : iconeFiltroAtualidades}}
     onMouseOver={e => {e.persist(); this.refs.imgAtualidades.src = iconeFiltroAtualidadesHover}}
     className={`${this.props.state.selectedCategory.selected == 4 ? styles.imoveisSelected : styles.imoveis} ${styles.boxTags}`}>
     <img height="30" width="30" ref="imgAtualidades" className={styles.iconeFiltro} src={(this.props.state.selectedCategory.selected == 4) ? iconeFiltroAtualidadesHover : iconeFiltroAtualidades}></img>
   <div className={styles.nomeFiltro}>Meu dia-a-dia</div>
-  </div>
+  </div>*/}
   <div onClick={() => {this.SendGetPostsByCategory(5)}}  onMouseLeave={e => {e.persist(); this.refs.imgMeioAmbiente.src = (this.props.state.selectedCategory.selected == 5) ? iconeFiltroMeioAmbienteHover : iconeFiltroMeioAmbiente}} onMouseOver={e => {e.persist(); this.refs.imgMeioAmbiente.src = iconeFiltroMeioAmbienteHover}} className={`${this.props.state.selectedCategory.selected == 5 ? styles.estilosSelected : styles.estilos} ${styles.boxTags}`}>
     <img height="30" width="30" ref="imgMeioAmbiente" className={styles.iconeFiltro} src={(this.props.state.selectedCategory.selected == 5) ? iconeFiltroMeioAmbienteHover : iconeFiltroMeioAmbiente}></img>
   <div className={styles.nomeFiltro}>Meu Mundo</div>

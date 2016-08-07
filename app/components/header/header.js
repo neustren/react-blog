@@ -117,6 +117,13 @@ return (
 
   </div>
 <Contato></Contato>
+<div className={`container`}>
+<div className={styles.slogan}>
+
+<span className={styles.tituloSlogan}>Zero Perrengue</span> é um blog que te ajuda a levar uma vida com menos aperto, com conteúdo para um dia a dia mais saudável pro seu bolso e pro seu meio ambiente. Consuma sem moderação!
+</div>
+</div>
+
 </div>
 </div>
 )

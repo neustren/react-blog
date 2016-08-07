@@ -36,7 +36,7 @@ class LeiaMais extends Component {
   }//s
 
   componentWillReceiveProps(nextProps) {
-    console.log(this.props.categoria);
+    // console.log(this.props.categoria);
     if((this.props.categoria!==nextProps.categoria) && nextProps.categoria && (this.props.state.postsByCategory.categoria!==nextProps.categoria)) {
       this.props.getPostsByCategory(nextProps.categoria);
     }
@@ -59,7 +59,7 @@ class LeiaMais extends Component {
     var categoria = this.props.categoria;
     var post = this.props.post;
     var catsPostsA = this.props.state.postsByCategory.posts;
-    console.log(catsPostsA);
+    // console.log(catsPostsA);
     if(catsPostsA) {
       var count = 0;
       return catsPostsA.map((pt) => {

@@ -29,7 +29,7 @@ var ReactDisqusThread = require('react-disqus-thread');
 import Historias from '../../components/historias/historias';
 import { SITE_URL } from '../../actions/index';
 import DocumentMeta from 'react-document-meta';
-
+import Filtro from '../../components/filtro/filtro';
 class postagemCompleta extends Component {
 
   componentDidMount() {
@@ -44,7 +44,7 @@ class postagemCompleta extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
+    // console.log(nextProps);
     if((this.props.params!==nextProps.params) || (!this.props.state.postOpened.post || !this.props.state.postOpened.post.slug))
      {
       this.props.getPostOpened(this.props.params);
@@ -55,7 +55,7 @@ class postagemCompleta extends Component {
   componentDidUpdate() {
     if(this.props.state.postOpened.post.slug && (this.props.state.postOpened.post.slug !== this.props.params))
     {
-      console.log('SCREEEAM');
+      // console.log('SCREEEAM');
       this.props.getPostOpened(this.props.params);
     }
   }
@@ -67,7 +67,7 @@ renderPostagem() {
 
 if(post) {
 
-console.log(post);
+// console.log(post);
 
 
 const banner = require('../../img/banner.png');
@@ -127,8 +127,10 @@ var titulo = post.title.rendered;
       </div>
     </div>
     <div className={styles.corpo}>
+          <Filtro></Filtro>
 
       <div style={{marginBottom: "2.4em"}} className="container">
+
         {/*<div className={`${styles.barraLateralShare} hidden-xs`}>
           <img onClick={() => window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location))} className={styles.shareCollumn} src={fbCinzaIcon}></img>
           <img onClick={() => window.open('https://twitter.com/home?status='+encodeURIComponent(window.location))} className={styles.shareCollumn} src={twCinzaIcon}></img>

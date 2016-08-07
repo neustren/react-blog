@@ -37,9 +37,9 @@ export function getPostsByCategory(CATEGORY, PAGE) {
     .end(function(err,data) {
 
       let enderecos = JSON.parse(data.text);
-      console.log(data.headers);
+      // console.log(data.headers);
       var hasMore=data.headers["x-wp-totalpages"]!=="1";
-      console.log(hasMore);
+      // console.log(hasMore);
 
     dispatch(postsByCategory(enderecos, PAGE, hasMore, CATEGORY));
     })
