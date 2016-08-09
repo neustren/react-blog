@@ -121,7 +121,7 @@ var titulo = post.title.rendered;
             <img height="50" width="51" style={{cursor: 'pointer'}} onClick={() => window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location))} className={styles.iconeDestaque} src={Facebook}></img>
             <img height="50" width="51" style={{cursor: 'pointer'}} onClick={() => window.open('https://twitter.com/home?status='+encodeURIComponent(window.location))} className={styles.iconeDestaque} src={Twitter}></img>
             <img height="50" width="51" style={{cursor: 'pointer'}} onClick={() => window.open('https://www.linkedin.com/shareArticle?mini=true&url='+encodeURIComponent(window.location)+'&title='+encodeURIComponent(titulo))} className={styles.iconeDestaque} src={Linkedin}></img>
-            <img height="50" width="51" style={{cursor: 'pointer'}} onClick={() => window.open('whatsapp://send?text='+encodeURIComponent(window.location)+'&title='+encodeURIComponent(titulo))} className={`${styles.iconeDestaque} ${styles.whatsappmobile}`} src={Whatsapp}></img>
+            <img  data-action="share/whatsapp/share" height="50" width="51" style={{cursor: 'pointer'}} onClick={() => window.open('whatsapp://send?text='+encodeURIComponent(window.location)+'&title='+encodeURIComponent(titulo))} className={`${styles.iconeDestaque} ${styles.whatsappmobile}`} src={Whatsapp}></img>
           </div>
         </div>
       </div>
@@ -151,7 +151,7 @@ var titulo = post.title.rendered;
             <div onClick={() => window.open('https://www.linkedin.com/shareArticle?mini=true&url='+encodeURIComponent(window.location)+'&title='+encodeURIComponent(titulo))} className={styles.caixaAzul}>
               <img className={styles.shareRow} src={lkBrancoIcon}></img>
             </div>
-            <div onClick={() => window.open('whatsapp://send?text='+encodeURIComponent(window.location)+'&title='+encodeURIComponent(titulo))} className={`${styles.caixaAzul} ${styles.whatsappmobile}`}>
+            <div  data-action="share/whatsapp/share" onClick={() => window.open('whatsapp://send?text='+encodeURIComponent(window.location)+'&title='+encodeURIComponent(titulo))} className={`${styles.caixaAzul} ${styles.whatsappmobile}`}>
               <img width="36" height="36" className={styles.shareRow} src={Whatsapp2}></img>
             </div>
           </div>
