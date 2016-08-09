@@ -27,7 +27,7 @@ class Tags extends Component {
     var tags = this.props.state.tags.tags;
     var l = tags.length;
                   var i = 0;
-                  console.log(tagsDoPost);
+                  // console.log(tagsDoPost);
     if(tagsDoPost) {
         return tagsDoPost.map((unique) => {
           for(i; i<l; i++) {

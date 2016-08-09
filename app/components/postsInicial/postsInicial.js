@@ -57,7 +57,7 @@ renderPosts() {
 }
 
   render() {
-    console.log(this.props.state.postsByCategory.hasMore);
+    // console.log(this.props.state.postsByCategory.hasMore);
     const leao = require('../../img/leao.png');
     const vejamaisbotao = require('../../img/vejamaisbotao.png');
 return (
