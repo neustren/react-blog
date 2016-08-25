@@ -10,5 +10,5 @@
 * Effy - support@effy.com.br
 *************************************************************************/
 
-export const ROOT_URL = 'http://tymo.com.br/bblog';
-export const SITE_URL = 'http://localhost:3100';
+export const ROOT_URL = 'http://api.zeroperrengue.com.br';
+export const SITE_URL = 'http://www.zeroperrengue.com.br';
